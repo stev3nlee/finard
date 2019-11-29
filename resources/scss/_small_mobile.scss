@@ -1,0 +1,18 @@
+@media (max-width: 480px) {
+	.btn {
+		&.transparent {
+			font-size: 12px;
+		}
+	}
+	.main {
+		.shop {
+			.detail {
+				ul.l-btn {
+	                li {
+	                    margin-right: 7px;
+	                }
+	            }
+			}
+		}
+	}
+}

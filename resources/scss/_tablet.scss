@@ -1,0 +1,93 @@
+@media (max-width: 991px) {
+	.btn {
+		&.transparent {
+			font-size: 13px;
+			padding: 10px;
+		}
+	}
+	.visible-md {
+		display: block;
+	}
+	.main-menu {
+		display: none;
+	}
+	.main {
+		.popup {
+	        .popup-content {
+	            width: 600px;
+	        }
+	    }
+		.shop {
+			.t1 {
+	            font-size: 16px;
+	        }
+	        .t2 {
+	            font-size: 25px;
+	            letter-spacing: 2px;
+	            margin-bottom: 30px;
+	        }
+			.item-product {
+				a {
+					.nm {
+						font-size: 16px;
+					}
+				}
+			}
+			.detail {
+				ul.l-btn {
+	                li {
+	                    margin-right: 8px;
+	                }
+	            }
+				.tab-content {
+	                .tab-pane {
+	                    font-size: 14px;
+	                    line-height: 26px;
+	                }
+	            }
+			}
+		}
+		.title {
+	        font-size: 25px;
+	        line-height: 35px;
+	        margin-bottom: 30px;
+	    }
+	    .pad-global {
+	    	padding: 40px 0;
+	    }
+	    .contact {
+	        .left-contact {
+	            padding: 40px 15px;
+	            .t {
+	                font-size: 20px;
+	                margin-bottom: 20px;
+	            }
+	        }
+	        .right-contact {
+	            padding: 40px 15px;
+	            .t {
+	                font-size: 17px;
+	                margin-bottom: 15px;
+	            }
+	        }
+	    }
+	    .about {
+	        .bdy {
+	            padding-top: 0px;
+	            p {
+	                font-size: 16px;
+	                line-height: 30px;
+	            }
+	        }
+	    }
+		.banner-about {
+	        padding: 70px 0;
+	        .mb100 {
+	            margin-bottom: 50px;
+	        }
+	        .nm {
+	            font-size: 20px;
+	        }
+	    }
+	}
+}
