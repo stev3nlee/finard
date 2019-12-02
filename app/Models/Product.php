@@ -35,4 +35,9 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Category', 'product_category', 'product_id', 'category_id');
     }
 
+    public function sub_category()
+    {
+        return $this->belongsToMany('App\Models\Sub_category', 'product_sub_category', 'product_id', 'sub_category_id');
+    }
+
 }

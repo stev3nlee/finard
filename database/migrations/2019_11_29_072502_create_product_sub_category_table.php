@@ -15,7 +15,12 @@ class CreateProductSubCategoryTable extends Migration
     {
         Schema::create('product_sub_category', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('sub_category_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');
+            $table->foreign('sub_category_id')->references('id')->on('sub_category')->onDelete('cascade');
         });
     }
 
