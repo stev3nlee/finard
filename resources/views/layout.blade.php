@@ -117,7 +117,7 @@
                     <div class="t-footer">Support</div>
                     <ul class="l-footer">
                         <li><a href="{{ URL::to('/faq') }}">FAQ</a></li>
-                        <li><a href="#">Track Package</a></li>
+                        <li><a href="https://www.jne.co.id/en/tracking/trace" target="_blank">Track Package</a></li>
                         <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
                     </ul>
                 </div>

@@ -10,7 +10,7 @@ class ColorController extends Controller
 {
     public function view()
     {
-        $data = Color::all();
+        $data = Color::orderby('id','desc')->get();
         return view('vendor.backpack.base.color.list', ['data' => $data]);
     }
     public function create()
@@ -27,7 +27,7 @@ class ColorController extends Controller
     public function insert(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:color',
         ]);
 
         $table = new Color;
@@ -41,7 +41,7 @@ class ColorController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:color,name,'.$request->input('id'),
         ]);
 
         $table = Color::find($request->input('id'));

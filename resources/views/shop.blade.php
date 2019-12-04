@@ -19,7 +19,7 @@
 				@foreach($product as $list)
 				<div class="col-md-4">
 					<div class="item-product">
-						<a class="click-pop" href="{{ URL::to('/shop-detail/'.$list->slug) }}">
+						<a data-id="{{ $list->id }}" class="click-pop">
 							<div class="img"><img src="{{ asset('/upload/'.$list->product_image[0]->image) }}" alt="" title=""/></div>
 							<ul class="l-color">
 								@foreach($list->color as $val)
@@ -29,7 +29,7 @@
 							<div class="nm">{{ $list->name }}</div>
 							<div class="clearfix price">
 								<div class="float-left">{{ $list->gold }}K Gold</div>
-								<div class="float-right">IDR {{ $list->price }}</div>
+								<div class="float-right">IDR {{ number_format($list->price,2,",",".") }}</div>
 							</div>
 						</a>
 					</div>
@@ -39,29 +39,25 @@
 		</div>
 	</div>
 
-<div class="popup">
+@foreach($product as $list)
+<div class="popup popupid{{ $list->id }}">
 	<div class="popup-overlay">
 		<div class="close-pop">
 			<div class="img"><img src="{{ asset('images/close.svg') }}" alt="" title=""/></div>
 		</div>
 		<div class="popup-content">
 			<div class="slider-pop">
+				@foreach($list->product_image as $im)
 				<div class="item">
-					<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
+					<div class="img"><img src="{{ asset('/upload/'.$im->image) }}" alt="" title=""/></div>
 				</div>
-				<div class="item">
-					<div class="img"><img src="{{ asset('images/about2.jpg') }}" alt="" title=""/></div>
-				</div>
-				<div class="item">
-					<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
-				</div>
-				<div class="item">
-					<div class="img"><img src="{{ asset('images/about2.jpg') }}" alt="" title=""/></div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
 </div>
+@endforeach
+
 @endsection
 
 
@@ -79,7 +75,8 @@
 	};
 	$(function() {
 		$('.click-pop').click(function(event) {
-			$('.popup').addClass('open');
+			var id = $(this).data('id');
+			$('.popupid'+id).addClass('open');
 			$('.popup-overlay').addClass('open');
 			$('body').addClass('no-scroll');
 		});

@@ -37,7 +37,10 @@ Route::get('/ring-sizer', function () {
     return view('ring-sizer');
 });
 
-Route::group(['prefix' => 'FinardAdmin'], function () {
+Route::group(['prefix' => 'finard-admin'], function () {
+    Route::get('/', function () {
+        return redirect('finard-admin/login');
+    });
     Route::get('login', 'Admin\AuthController@checkLogin');
     Route::post('auth/login', 'Admin\AuthController@login');
     Route::get('auth/logout', 'Admin\AuthController@logout');
@@ -130,6 +133,23 @@ Route::group(['prefix' => 'FinardAdmin'], function () {
         Route::get('about', 'Admin\DashboardController@about')
             ->name('about_view');
         Route::post('about/update', 'Admin\DashboardController@about_update');
+
+        Route::get('company_data', 'Admin\DashboardController@company_data')
+            ->name('company_data_view');
+        Route::post('company_data/update', 'Admin\DashboardController@company_data_update');
+
+        Route::get('ring_sizer', 'Admin\DashboardController@ring_sizer')
+            ->name('ring_sizer_view');
+        Route::post('ring_sizer/update', 'Admin\DashboardController@ring_sizer_update');
+
+        Route::get('admin', 'Admin\AdminController@view')
+            ->name('admin_view');
+        Route::get('admin/create', 'Admin\AdminController@create');
+        Route::get('admin/edit/{id}', 'Admin\AdminController@edit');
+        Route::post('admin/insert', 'Admin\AdminController@insert');
+        Route::post('admin/update', 'Admin\AdminController@update');
+        Route::get('admin/delete/{id}', 'Admin\AdminController@delete');
+        Route::get('admin/status/{id}/{status}', 'Admin\AdminController@status');
     });
 });
 

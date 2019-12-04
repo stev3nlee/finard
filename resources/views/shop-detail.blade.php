@@ -22,7 +22,7 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="detail">
 						<div class="nm">{{ $data->name }}</div>
-						<div class="price">IDR {{ $data->price }}M</div>
+						<div class="price">IDR number_format($list->price,2,",",".")</div>
 						<div class="color">Available colors</div>
 						<div>
 							<ul class="l-color inline">

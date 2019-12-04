@@ -15,7 +15,7 @@ class ShopController extends Controller
     public function view($alias)
     {
         $category = Category::where('slug',$alias)->first();
-        $products = Product::with(['category','color']);
+        $products = Product::where('status',1)->with(['category','color']);
 
         if($category){
             $products = $products->whereHas('category', function($q) use($category) {
@@ -29,7 +29,7 @@ class ShopController extends Controller
     public function category($alias)
     {
         $category = Sub_category::where('slug',$alias)->first();
-        $products = Product::with(['category','sub_category','color']);
+        $products = Product::where('status',1)->with(['category','sub_category','color']);
 
         if($category){
             $products = $products->whereHas('sub_category', function($q) use($category) {

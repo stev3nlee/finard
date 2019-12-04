@@ -31,7 +31,7 @@ class SubCategoryController extends Controller
     public function insert(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:sub_category',
             'category_id' => 'required',
         ]);
         $imageName = "";
@@ -48,7 +48,7 @@ class SubCategoryController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:sub_category,name,'.$request->input('id'),
             'category_id' => 'required',
         ]);
 

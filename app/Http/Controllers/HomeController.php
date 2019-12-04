@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Quotation;
 use App\Models\About;
 use Illuminate\Http\Request;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,24 @@ class HomeController extends Controller
         $table->subject = $subject;
         $table->message = $message;
         $table->save();
+
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'subject' => $subject,
+            'message_contact' => $message,
+        );
+
+        Mail::send('email_contact_us', $data , function($contact)use($data)
+        {
+            $contact->from(
+                'noreply@thefinard.com',
+                'The Finard'
+            );
+            $contact->to('steven@idsskincare.com');
+            $contact->subject('The Finard Contact Us');
+        });
 
         return redirect('contact')->with(['success' => 'Message Successfully Send']);;
     }
@@ -74,6 +93,29 @@ class HomeController extends Controller
         $table->budged = $budged;
         $table->image = $imageName;
         $table->save();
+
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'subject' => $subject,
+            'message_contact' => $message,
+            'ring_detail' => $ring_detail,
+            'setting' => $setting,
+            'carat' => $carat,
+            'budged' => $budged,
+            'image' => $imageName,
+        );
+
+        Mail::send('email_quotation', $data , function($contact)use($data)
+        {
+            $contact->from(
+                'noreply@thefinard.com',
+                'The Finard'
+            );
+            $contact->to('steven@idsskincare.com');
+            $contact->subject('The Finard Contact Us');
+        });
 
         return redirect('quotation-form')->with(['success' => 'Quotation Successfully Send']);;
     }

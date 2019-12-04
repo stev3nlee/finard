@@ -21,7 +21,7 @@ class AccessSession
         if(session('__ADMINSESSION__')){
             return $next($request);
         }else{
-            return redirect('FinardAdmin/login');
+            return redirect('finard-admin/login');
         }
     }
 }

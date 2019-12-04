@@ -25,7 +25,7 @@ class BannerController extends Controller
     public function insert(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:banner',
         ]);
 
         $imageName = "";
@@ -52,7 +52,7 @@ class BannerController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:banner,name,'.$request->input('id'),
         ]);
 
         $imageName = "";

@@ -24,7 +24,7 @@ class CategoryController extends Controller
     }
     function insert(Request $request){
 			$validatedData = $request->validate([
-				'name' => 'required|max:255',
+				'name' => 'required|max:255|unique:category',
 			]);
 
 			$imageName = "";
@@ -51,7 +51,7 @@ class CategoryController extends Controller
 		}
     function update(Request $request){
 			$validatedData = $request->validate([
-				'name' => 'required|max:255',
+				'name' => 'required|max:255|unique:category,name,'.$request->input('id'),
 			]);
 			
 	    	$imageName = "";
