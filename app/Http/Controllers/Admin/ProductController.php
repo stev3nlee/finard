@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Product_image;
+use App\Models\Color;
 use App\Models\Category;
 use App\Models\Sub_category;
 use Illuminate\Http\Request;
@@ -20,14 +21,16 @@ class productController extends Controller
     {
         $category = Category::where('status',1)->get();
         $sub_category = Sub_category::where('status',1)->get();
-        return view('vendor.backpack.base.product.create', ['category' => $category,'sub_category' => $sub_category]);
+        $color = Color::where('status',1)->get();
+        return view('vendor.backpack.base.product.create', ['category' => $category,'sub_category' => $sub_category,'color' => $color]);
     }
     public function edit($id)
     {
         $data = Product::find($id);
         $category = Category::where('status',1)->get();
         $sub_category = Sub_category::where('status',1)->get();
-        return view('vendor.backpack.base.product.edit', ['data' => $data,'category' => $category,'sub_category' => $sub_category]);
+        $color = Color::where('status',1)->get();
+        return view('vendor.backpack.base.product.edit', ['data' => $data,'category' => $category,'sub_category' => $sub_category,'color' => $color]);
     }
     public function insert(Request $request)
     {
@@ -37,6 +40,7 @@ class productController extends Controller
 
         $category = (null !== $request->input('category')) ? $request->input('category') : [];
         $sub_category = (null !== $request->input('sub_category')) ? $request->input('sub_category') : [];
+        $color = (null !== $request->input('color')) ? $request->input('color') : [];
 
         $imageName = "";
 
@@ -44,11 +48,14 @@ class productController extends Controller
         $product->name = $request->input('name');
         $product->description = str_replace('src="', 'src="'.env('BACKPANEL_URL').'', $request->input('description'));
         $product->price = $request->input('price');
+        $product->sale_price = $request->input('sale_price');
+        $product->size_chart = str_replace('src="', 'src="'.env('BACKPANEL_URL').'', $request->input('size_chart'));
         $product->gold = $request->input('gold');
         $product->save();
 
         $product->category()->sync($category);
         $product->sub_category()->sync($sub_category);
+        $product->color()->sync($color);
 
         $total_images = $request->input('total_images');
 
@@ -81,6 +88,7 @@ class productController extends Controller
 
         $category = (null !== $request->input('category')) ? $request->input('category') : [];
         $sub_category = (null !== $request->input('sub_category')) ? $request->input('sub_category') : [];
+        $color = (null !== $request->input('color')) ? $request->input('color') : [];
 
         $imageName = "";
 
@@ -89,10 +97,13 @@ class productController extends Controller
         $product->description = str_replace('src="', 'src="'.env('BACKPANEL_URL').'', $request->input('description'));
         $product->price = $request->input('price');
         $product->gold = $request->input('gold');
+        $product->sale_price = $request->input('sale_price');
+        $product->size_chart = str_replace('src="', 'src="'.env('BACKPANEL_URL').'', $request->input('size_chart'));
         $product->save();
 
         $product->category()->sync($category);
         $product->sub_category()->sync($sub_category);
+        $product->color()->sync($color);
 
         $total_images = $request->input('total_images');
         for($i=0;$i<$total_images;$i++){

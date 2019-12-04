@@ -40,7 +40,7 @@
                 <ul class="list-menu">
                     <li><a href="{{ URL::to('/') }}">Home</a></li>
                     <li>
-                        <a href="{{ URL::to('/shop') }}">Engagement</a> <span class="drop-menu engagement"><i class="fas fa-caret-down"></i></span>
+                        <a href="{{ URL::to('/shop') }}">a</a> <span class="drop-menu engagement"><i class="fas fa-caret-down"></i></span>
                         <ul class="have-drop engagement">
                             <li><a href="{{ URL::to('/shop') }}">Engagement Rings</a></li>
                             <li><a href="{{ URL::to('/shop') }}">Wedding Bands</a></li>
@@ -66,31 +66,23 @@
         <div class="container">
             <ul class="l-menu">
                 <li><a href="{{ URL::to('/') }}">Home</a></li>
+                @foreach($category as $cat)
                 <li>
-                    <a class="dropbtn" href="{{ URL::to('/shop') }}">Engagement</a>
+                    <a @if(count($cat->sub_categories)>0) class="dropbtn" @endif href="{{ URL::to('/shop/'.$cat->slug) }}">{{ $cat->name }}</a>
+                    @if(count($cat->sub_categories)>0)
                     <div>
                         <div class="sub-menu">
                             <ul>
-                                <li><a href="{{ URL::to('/shop') }}">Engagement Rings</a></li>
-                                <li><a href="{{ URL::to('/shop') }}">Wedding Bands</a></li>
+                                @foreach($cat->sub_categories as $sub)
+                                <li><a href="{{ URL::to('/shop/category/'.$sub->slug) }}">{{ $sub->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
+                    @endif
                 </li>
-                <li><a href="{{ URL::to('/shop') }}">Wedding</a></li>
-                <li>
-                    <a class="dropbtn" href="{{ URL::to('/shop') }}">Jewelry</a>
-                    <div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a href="{{ URL::to('/shop') }}">Rings</a></li>
-                                <li><a href="{{ URL::to('/shop') }}">Necklaces</a></li>
-                                <li><a href="{{ URL::to('/shop') }}">Bracelets</a></li>
-                                <li><a href="{{ URL::to('/shop') }}">Earrings</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+                @endforeach
+                
                 <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
             </ul>
         </div>

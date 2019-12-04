@@ -12,7 +12,7 @@ class Product extends Model
     use SoftDeletes;
     public $timestamps = true;
     protected $table = 'product';
-    protected $fillable = ['name','slug','image','price','description','status','gold'];
+    protected $fillable = ['name','slug','image','price','description','status','gold','size_chart','sale_price'];
     protected $attributes = [
         'status' => 1,
     ];
@@ -38,6 +38,11 @@ class Product extends Model
     public function sub_category()
     {
         return $this->belongsToMany('App\Models\Sub_category', 'product_sub_category', 'product_id', 'sub_category_id');
+    }
+
+    public function color()
+    {
+        return $this->belongsToMany('App\Models\Color', 'product_color', 'product_id', 'color_id');
     }
 
 }

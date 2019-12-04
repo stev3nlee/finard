@@ -22,7 +22,7 @@ return [
     // ----
     // HEAD
     // ----
-
+    'skin' => 'skin-red-light',
     // Project name. Shown in the window title.
     'project_name' => 'Finard',
 

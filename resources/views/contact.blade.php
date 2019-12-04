@@ -24,32 +24,39 @@
 				</div>
 				<div class="col-md-6 offset-md-1 right-contact">
 					<div class="t">LEAVE A MESSAGE</div>
-					<form>
+					 @if ($message = Session::get('success'))
+				      <div class="alert alert-success alert-block">
+				        <button type="button" class="close" data-dismiss="alert">×</button> 
+				          <strong>{{ $message }}</strong>
+				      </div>
+				    @endif
+					<form method="post" action="{{ URL::to('/contact-submit') }}">
+						{!! csrf_field() !!}
 						<div class="form-group">
 							<label for="name">Name</label>
-							<input class="form-control" type="text" id="name" name="name"/>
+							<input class="form-control" required="required" type="text" id="name" name="name"/>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="email">Email</label>
-									<input class="form-control" type="text" id="email" name="email"/>
+									<input class="form-control" required="required" type="email" id="email" name="email"/>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="phone">Phone</label>
-									<input class="form-control only-number" type="text" id="phone" name="phone"/>
+									<input class="form-control only-number" required="required" type="text" id="phone" name="phone"/>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="subject">Subject</label>
-							<input class="form-control" type="text" id="subject" name="subject"/>
+							<input class="form-control" required="required" type="text" id="subject" name="subject"/>
 						</div>
 						<div class="form-group">
 							<label for="message">Message</label>
-							<textarea class="form-control" type="message" id="message" name="message"></textarea>
+							<textarea class="form-control" required="required" type="message" id="message" name="message"></textarea>
 						</div>
 						<div class="text-center">
 							<button type="submit" class="btn">SUBMIT</button>

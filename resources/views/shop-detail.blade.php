@@ -12,34 +12,33 @@
 			<div class="row">
 				<div class="col-md-6 col-lg-7 xs20">
 					<div class="slider-product">
+						@foreach($data->product_image as $list)
 						<div class="item">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
+							<div class="img"><img src="{{ asset('/upload/'.$list->image) }}" alt="{{ $data->name }}" title="{{ $data->name }}"/></div>
 						</div>
-						<div class="item">
-							<div class="img"><img src="{{ asset('images/about2.jpg') }}" alt="" title=""/></div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-5">
 					<div class="detail">
-						<div class="nm">Thin Fancy Band</div>
-						<div class="price">IDR 200M</div>
+						<div class="nm">{{ $data->name }}</div>
+						<div class="price">IDR {{ $data->price }}M</div>
 						<div class="color">Available colors</div>
 						<div>
 							<ul class="l-color inline">
-								<li><div class="bdr grey active"><i class="fas fa-check"></i></div></li>
-								<li><div class="bdr gold"><i class="fas fa-check"></i></div></li>
-								<li><div class="bdr red"><i class="fas fa-check"></i></div></li>
+								@foreach($data->color as $col)
+								<li><div class="bdr" style="background-color:{{ $col->color }}"><i class="fas fa-check"></i></div></li>
+								@endforeach
 							</ul>
-							<div class="point">18K Gold</div>
+							<div class="point">{{ $data->gold }}K Gold</div>
 						</div>
 						<div class="nav" role="tablist">
 							<a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab" aria-controls="nav-desc" aria-selected="true">Description</a>
 							<a class="nav-item nav-link" id="nav-size-tab" data-toggle="tab" href="#nav-size" role="tab" aria-controls="nav-size" aria-selected="false">Size chart</a>
 						</div>
 						<div class="tab-content">
-							<div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">Akzidenz-Grotesk is a sans-serif or grotesque tradition general-purpose, 'trade' sometimes been typeface sold opposed to in German unadorned of use type metal contemporary Gestalt Bauhaus narrow.</div>
-							<div class="tab-pane fade" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">To know about your size, please refer to this size chart.</div>
+							<div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">{!! $data->description !!}</div>
+							<div class="tab-pane fade" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">{!! $data->size_chart !!}</div>
 						</div>
 						<ul class="l-btn">
 							<li>

@@ -16,159 +16,25 @@
 				</div>
 			</div>
 			<div class="row">
+				@foreach($product as $list)
 				<div class="col-md-4">
 					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
+						<a class="click-pop" href="{{ URL::to('/shop-detail/'.$list->slug) }}">
+							<div class="img"><img src="{{ asset('/upload/'.$list->product_image[0]->image) }}" alt="" title=""/></div>
 							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
+								@foreach($list->color as $val)
+									<li><div class="bdr" style="background-color:{{ $val->color }}"></div></li>
+								@endforeach
 							</ul>
-							<div class="nm">Engagement Ring Name</div>
+							<div class="nm">{{ $list->name }}</div>
 							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
+								<div class="float-left">{{ $list->gold }}K Gold</div>
+								<div class="float-right">IDR {{ $list->price }}</div>
 							</div>
 						</a>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about2.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about2.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about2.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="item-product">
-						<a class="click-pop">
-							<div class="img"><img src="{{ asset('images/about1.jpg') }}" alt="" title=""/></div>
-							<ul class="l-color">
-								<li><div class="bdr grey"></div></li>
-								<li><div class="bdr gold"></div></li>
-								<li><div class="bdr red"></div></li>
-							</ul>
-							<div class="nm">Engagement Ring Name</div>
-							<div class="clearfix price">
-								<div class="float-left">18K Gold</div>
-								<div class="float-right">IDR 200M</div>
-							</div>
-						</a>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
