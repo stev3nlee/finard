@@ -39,23 +39,18 @@
             <div class="container">
                 <ul class="list-menu">
                     <li><a href="{{ URL::to('/') }}">Home</a></li>
+                    @foreach($category as $cat)
                     <li>
-                        <a href="{{ URL::to('/shop') }}">a</a> <span class="drop-menu engagement"><i class="fas fa-caret-down"></i></span>
-                        <ul class="have-drop engagement">
-                            <li><a href="{{ URL::to('/shop') }}">Engagement Rings</a></li>
-                            <li><a href="{{ URL::to('/shop') }}">Wedding Bands</a></li>
+                        <a href="{{ URL::to('/shop/'.$cat->slug) }}">{{ $cat->name }}</a> @if(count($cat->sub_categories)>0)<span class="drop-menu {{ $cat->slug }}"><i class="fas fa-caret-down"></i></span> @endif
+                        @if(count($cat->sub_categories)>0)
+                        <ul class="have-drop {{ $cat->slug }}">
+                            @foreach($cat->sub_categories as $sub)
+                            <li><a href="{{ URL::to('/shop/category/'.$sub->slug) }}">{{ $sub->name }}</a></li>
+                            @endforeach
                         </ul>
+                        @endif
                     </li>
-                    <li><a href="{{ URL::to('/shop') }}">Wedding</a></li>
-                    <li>
-                        <a href="{{ URL::to('/shop') }}">Jewelry</a> <span class="drop-menu jewelry"><i class="fas fa-caret-down"></i></span>
-                        <ul class="have-drop jewelry">
-                            <li><a href="{{ URL::to('/shop') }}">Rings</a></li>
-                            <li><a href="{{ URL::to('/shop') }}">Necklaces</a></li>
-                            <li><a href="{{ URL::to('/shop') }}">Bracelets</a></li>
-                            <li><a href="{{ URL::to('/shop') }}">Earrings</a></li>
-                        </ul>
-                    </li>
+                    @endforeach
                     <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
                 </ul>
             </div>
@@ -98,9 +93,9 @@
                 <div class="col-md-3 order-2 xs40 resp-center">
                     <div class="t-footer"><a href="mailto:the.finard@gmail.com">the.finard@gmail.com</a></div>
                     <ul class="l-soc">
-                        <li><a href="#" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#" target="_blank" rel="noreferrer noopener"><i class="fab fa-pinterest"></i></a></li>
+                        <li><a href="{{ $company_data->facebook }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ $company_data->instagram }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ $company_data->pinterest }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-pinterest"></i></a></li>
                     </ul>
                     <div class="img">
                         <img src="{{ asset('images/bridestory.png') }}" alt="Bridestory" title="Bridestory"/>
