@@ -16,6 +16,18 @@
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/front.css?v.1') }}" rel="stylesheet"/>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!--
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154228788-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-154228788-1');
+	</script>
+	-->
+
 </head>
 <body>
     <header>
