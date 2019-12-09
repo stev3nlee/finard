@@ -49,10 +49,24 @@ class HomeController extends Controller
                 'The Finard'
             );
             $contact->to('noreply@thefinard.com');
-            $contact->subject('The Finard Contact Us');
+            $contact->subject('The Finard - Contact Us');
         });
 
-        return redirect('contact')->with(['success' => 'Thank you for contacting us! We will get in touch with you shortly.']);;
+        $data = array(
+            'email' => $email,
+        );
+
+        Mail::send('email_contact_us_member', $data , function($contact)use($data)
+        {
+            $contact->from(
+                'noreply@thefinard.com',
+                'The Finard'
+            );
+            $contact->to($data['email']);
+            $contact->subject('The Finard - Contact Us');
+        });
+
+        return redirect('contact')->with(['success' => 'Thank you for contacting us! We will get in touch with you shortly.']);
     }
 
     public function quotation(Request $request){
@@ -115,7 +129,21 @@ class HomeController extends Controller
                 'The Finard'
             );
             $contact->to('noreply@thefinard.com');
-            $contact->subject('The Finard - Contact Us');
+            $contact->subject('The Finard - Quotation');
+        });
+
+        $data = array(
+            'email' => $email,
+        );
+
+        Mail::send('email_quotation_member', $data , function($contact)use($data)
+        {
+            $contact->from(
+                'noreply@thefinard.com',
+                'The Finard'
+            );
+            $contact->to($data['email']);
+            $contact->subject('The Finard - Quotation');
         });
 
         return redirect('quotation-form')->with(['success' => 'Thank you for sending us a form! We will get in touch with you shortly.']);;
