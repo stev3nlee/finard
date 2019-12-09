@@ -147,7 +147,7 @@ header {
                 font-size: 16px;
                 line-height: 26px;
                 letter-spacing: 0;
-                border: 1px solid transparent;
+                border: 2px solid transparent;
                 &.dropbtn {
                     position: relative;
                     &:before {
@@ -162,8 +162,7 @@ header {
                     }
                 }
                 &:hover {
-                    background-color: #e9dcc8;
-                    border-color: #bfaa88;
+                    border-bottom:1px solid #bfaa88;
                     &.dropbtn {
                         &:before {
                             background-color: #e9dcc8;
@@ -209,11 +208,11 @@ header {
                 padding: 20px 0;
                 opacity: 0;
                 z-index: 100;
-                border-top: 1px solid #bfaa88;
-                border-bottom: 1px solid #bfaa88;
+                // border-top: 1px solid #bfaa88;
+                // border-bottom: 1px solid #bfaa88;
                 visibility: hidden;
                 overflow: hidden;
-                background: rgba(233,220,199, 0.95);
+                background: rgba(255,255,255, 0.95);
                 @include transition(all 0.3s ease 0.15s);
             }
             &:hover {
@@ -223,8 +222,8 @@ header {
                     overflow: visible;
                 }
                 a {
-                    background-color: #e9dcc8;
-                    border-color: #bfaa88;
+                    // background-color: #e9dcc8;
+                    // border-color: #bfaa88;
                     &.dropbtn {
                         &:before {
                             background-color: #e9dcc8;

@@ -29,7 +29,7 @@
 							<div class="nm">{{ $list->name }}</div>
 							<div class="clearfix price">
 								<div class="float-left">{{ $list->gold }}K Gold</div>
-								<div class="float-right">IDR {{ number_format($list->price,2,",",".") }}</div>
+								<div class="float-right">STARTS FROM IDR {{ number_format($list->price,0,",",".") }}</div>
 							</div>
 						</a>
 					</div>

@@ -14,7 +14,7 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/front.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/front.css?v.1') }}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -98,13 +98,13 @@
                         <li><a href="{{ $company_data->pinterest }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-pinterest"></i></a></li>
                     </ul>
                     <div class="img">
-                        <a href="{{ $company_data->bridestory }}" target="_blank"><img src="{{ asset('images/bridestory.png') }}" alt="Bridestory" title="Bridestory"/></a>
+                        <a href="{{ $company_data->bridestory }}" title="The Finard" target="_blank" rel="dofollow"><img alt="The Finard" width="164" height="25" src="https://business.bridestory.com/assets/images/badges/certified/pink.png" /></a>
                     </div>
                 </div>
                 <div class="col-6 col-md-2 order-3 order-md-2 resp-center">
                     <div class="t-footer">About</div>
                     <ul class="l-footer">
-                        <li><a href="{{ URL::to('/journal') }}">Journal</a></li>
+                        <!-- <li><a href="{{ URL::to('/journal') }}">Journal</a></li> -->
                         <li><a href="{{ URL::to('/ring-sizer') }}">Ring sizer</a></li>
                     </ul>
                 </div>

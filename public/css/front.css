@@ -147,7 +147,7 @@ header .logo a {
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
 }
 .main-menu ul.l-menu li a.dropbtn {
   position: relative;
@@ -163,8 +163,7 @@ header .logo a {
   background-color: transparent;
 }
 .main-menu ul.l-menu li a:hover {
-  background-color: #e9dcc8;
-  border-color: #bfaa88;
+  border-bottom: 1px solid #bfaa88;
 }
 .main-menu ul.l-menu li a:hover.dropbtn:before {
   background-color: #e9dcc8;
@@ -204,11 +203,9 @@ header .logo a {
   padding: 20px 0;
   opacity: 0;
   z-index: 100;
-  border-top: 1px solid #bfaa88;
-  border-bottom: 1px solid #bfaa88;
   visibility: hidden;
   overflow: hidden;
-  background: rgba(233, 220, 199, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   -webkit-transition: all 0.3s ease 0.15s;
   -moz-transition: all 0.3s ease 0.15s;
   transition: all 0.3s ease 0.15s;
@@ -217,10 +214,6 @@ header .logo a {
   opacity: 1;
   visibility: visible;
   overflow: visible;
-}
-.main-menu ul.l-menu li:hover a {
-  background-color: #e9dcc8;
-  border-color: #bfaa88;
 }
 .main-menu ul.l-menu li:hover a.dropbtn:before {
   background-color: #e9dcc8;
@@ -1206,6 +1199,9 @@ footer .txt {
   }
   header .box-menu ul.have-drop li a {
     font-size: 14px;
+  }
+  header .logo img {
+    height: 30px;
   }
 
   footer {

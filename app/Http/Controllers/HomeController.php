@@ -52,7 +52,7 @@ class HomeController extends Controller
             $contact->subject('The Finard Contact Us');
         });
 
-        return redirect('contact')->with(['success' => 'Message Successfully Send']);;
+        return redirect('contact')->with(['success' => 'Thank you for contacting us! We will get in touch with you shortly.']);;
     }
 
     public function quotation(Request $request){
@@ -115,10 +115,10 @@ class HomeController extends Controller
                 'The Finard'
             );
             $contact->to('noreply@thefinard.com');
-            $contact->subject('The Finard Contact Us');
+            $contact->subject('The Finard - Contact Us');
         });
 
-        return redirect('quotation-form')->with(['success' => 'Quotation Successfully Send']);;
+        return redirect('quotation-form')->with(['success' => 'Thank you for sending us a form! We will get in touch with you shortly.']);;
     }
 
     public function about()

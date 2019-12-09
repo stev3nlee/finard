@@ -46,11 +46,13 @@
 	<div class="banner-text">
 		<div class="container">
 			<div class="img"><img src="{{ asset('images/petik.png') }}" alt="" title=""/></div>
+			<!--
 			<div class="row justify-content-center">
 				<div class="col-lg-10">
 					<div class="t">Akzidenz-Grotesk is a sans-serif or grotesque tradition general-purpose, 'trade' sometimes been typeface sold opposed to in German unadorned.</div>
 				</div>
 			</div>
+			-->
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8">
 					<div class="bdy">
