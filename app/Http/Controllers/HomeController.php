@@ -44,7 +44,7 @@ class HomeController extends Controller
         Mail::send('email_contact_us', $data , function($contact)use($data)
         {
             $contact->from(
-                'noreply@thefinard.com',
+                'hello@thefinard.com',
                 'The Finard'
             );
             $contact->to('steven@idsskincare.com');

@@ -98,7 +98,7 @@
                         <li><a href="{{ $company_data->pinterest }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-pinterest"></i></a></li>
                     </ul>
                     <div class="img">
-                        <img src="{{ asset('images/bridestory.png') }}" alt="Bridestory" title="Bridestory"/>
+                        <a href="{{ $company_data->bridestory }}" target="_blank"><img src="{{ asset('images/bridestory.png') }}" alt="Bridestory" title="Bridestory"/></a>
                     </div>
                 </div>
                 <div class="col-6 col-md-2 order-3 order-md-2 resp-center">

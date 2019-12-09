@@ -25,7 +25,7 @@ class JournalController extends Controller
     public function insert(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|max:255|unique:journal',
+            'title' => 'required|max:255|unique:journal,deleted_at,NULL',
         ]);
 
         $imageName = "";
@@ -53,7 +53,7 @@ class JournalController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|max:255|unique:journal,title,'.$request->input('id'),
+            'title' => 'required|max:255|unique:journal,title,'.$request->input('id').',id,deleted_at,NULL',
         ]);
 
         $imageName = "";

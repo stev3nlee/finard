@@ -18,7 +18,7 @@
 								</div>
 								<div id="ordere{{ $val->id }}" class="collapse">
 									<div class="bdy">
-										<p>{{ $val->answer }}</p>
+										<p>{!! $val->answer !!}</p>
 									</div>
 								</div>
 							</div>

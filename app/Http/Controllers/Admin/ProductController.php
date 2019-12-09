@@ -35,7 +35,7 @@ class productController extends Controller
     public function insert(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:product',
+            'name' => 'required|max:255|unique:product,deleted_at,NULL',
         ]);
 
         $category = (null !== $request->input('category')) ? $request->input('category') : [];
@@ -83,7 +83,7 @@ class productController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:product,name,'.$request->input('id'),
+            'name' => 'required|max:255|unique:product,name,'.$request->input('id').',id,deleted_at,NULL',
         ]);
 
         $category = (null !== $request->input('category')) ? $request->input('category') : [];

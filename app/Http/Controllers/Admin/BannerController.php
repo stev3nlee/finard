@@ -29,6 +29,7 @@ class BannerController extends Controller
         ]);
 
         $imageName = "";
+        $imageNameMobile = "";
 
         $table = new Banner;
         $table->name = $request->input('name');
@@ -46,6 +47,17 @@ class BannerController extends Controller
             $detail->image = $imageName;
             $detail->save();
         }
+
+        if ($request->hasFile('mobile_image')) {
+            $imageTempName = $request->file('mobile_image')->getPathname();
+            $imageNameMobile = md5(rand().rand()) . '.' . $request->file('mobile_image')->getClientOriginalExtension();
+            $path = base_path() . '/public/upload';
+            $request->file('mobile_image')->move($path, $imageNameMobile);
+
+            $detail->mobile_image = $imageNameMobile;
+            $detail->save();
+        }
+
         $request->session()->flash('insert', 'Success');
         return redirect()->route('banner_view');
     }
@@ -56,6 +68,7 @@ class BannerController extends Controller
         ]);
 
         $imageName = "";
+        $imageNameMobile = "";
 
         $table = Banner::find($request->input('id'));
         $table->name = $request->input('name');
@@ -80,7 +93,26 @@ class BannerController extends Controller
         } else {
             $imageName = $request->input('old_image');
         }
+
+        if ($request->hasFile('mobile_image')) {
+            if ($request->input('old_image_mobile') != null) {
+                $oldimagemobile = base_path() . '/public/upload/' . $request->input('old_image_mobile');
+                if (file_exists($oldimagemobile)) {
+                    unlink($oldimagemobile);
+                }
+            }
+
+            $imageTempName = $request->file('mobile_image')->getPathname();
+            $imageNameMobile = md5(rand().rand()) . '.' . $request->file('mobile_image')->getClientOriginalExtension();
+            $path = base_path() . '/public/upload';
+            $request->file('mobile_image')->move($path, $imageNameMobile);
+            
+        } else {
+            $imageNameMobile = $request->input('old_image_mobile');
+        }
+
         $detail->image = $imageName;
+        $detail->mobile_image = $imageNameMobile;
         $detail->save();
         $request->session()->flash('update', 'Success');
         return redirect()->route('banner_view');

@@ -28,7 +28,7 @@ class FaqCategoryController extends Controller
     public function insert(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:faq_category',
+            'name' => 'required|max:255|unique:faq_category,deleted_at,NULL',
         ]);
 
         $table = new Faq_category;
@@ -41,7 +41,7 @@ class FaqCategoryController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:faq_category,name,'.$request->input('id'),
+            'name' => 'required|max:255|unique:faq_category,name,'.$request->input('id').',id,deleted_at,NULL',
         ]);
 
         $table = Faq_category::find($request->input('id'));

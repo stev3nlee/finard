@@ -15,7 +15,7 @@
 					<div class="box">
 						<div class="h1">Email us</div>
 						<div class="txt">You may choose to contact us through email to:</div>
-						<div class="link"><a href="mailto:@the.finard@gmail.com">@the.finard@gmail.com</a></div>
+						<div class="link"><a href="mailto:the.finard@gmail.com">the.finard@gmail.com</a></div>
 					</div>
 					<div class="box mb0">
 						<div class="h1">Read Our FAQ</div>
