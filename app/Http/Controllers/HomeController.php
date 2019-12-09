@@ -15,7 +15,8 @@ class HomeController extends Controller
     public function view()
     {
         $data = Banner::orderby('id','desc')->where('status',1)->get();
-        return view('index', ['banner' => $data]);
+        $about = About::first();
+        return view('index', ['banner' => $data, 'about'=>$about]);
     }
     
     public function contact(Request $request){

@@ -54,7 +54,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8">
 					<div class="bdy">
-						<p>Sometimes been typeface sold opposed to in German unadorned of use type metal contemporary Gestalt Bauhaus narrow. Due to Neuzeit S blends Klavika but genre Goudy Sans their for often for headings nearly-exactly to be the folded-up for example.</p>
+						{!! $about->content !!}
 					</div>
 					<div class="link"><a href="{{ URL::to('/about') }}">Our Story</a></div>
 				</div>
