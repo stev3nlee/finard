@@ -45,10 +45,10 @@ class HomeController extends Controller
         Mail::send('email_contact_us', $data , function($contact)use($data)
         {
             $contact->from(
-                'hello@thefinard.com',
+                'noreply@thefinard.com',
                 'The Finard'
             );
-            $contact->to('steven@idsskincare.com');
+            $contact->to('noreply@thefinard.com');
             $contact->subject('The Finard Contact Us');
         });
 
@@ -114,7 +114,7 @@ class HomeController extends Controller
                 'noreply@thefinard.com',
                 'The Finard'
             );
-            $contact->to('steven@idsskincare.com');
+            $contact->to('noreply@thefinard.com');
             $contact->subject('The Finard Contact Us');
         });
 

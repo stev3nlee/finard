@@ -9,7 +9,7 @@ class AuthController extends Controller
 	function checkLogin(Request $request){
 		$userData = session('__ADMINSESSION__');
         if($userData){
-        	return redirect('finard-admin\dashboard');
+        	return redirect('finard-admin/dashboard');
         }
 		return view('vendor.backpack.base.auth.login');
 	}
@@ -24,17 +24,17 @@ class AuthController extends Controller
             $table->last_login = date('Y-m-d H:i:s');
             $table->save();
             session(['__ADMINSESSION__' => $check]);
-            return redirect('finard-admin\dashboard');
+            return redirect('finard-admin/dashboard');
         }
         else{
-            return redirect('finard-admin\login');
+            return redirect('finard-admin/login');
         }
 		
     }
 
     function logout(Request $request){
     	$request->session()->flush();
-    	return redirect('finard-admin\login');
+    	return redirect('finard-admin/login');
     }
 
     function changePassword(Request $request){
