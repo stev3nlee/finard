@@ -79,6 +79,7 @@ class HomeController extends Controller
     }
 
     public function quotation(Request $request){
+        dd($request->input());
         $validatedData = $request->validate([
             'g-recaptcha-response' => 'required|recaptcha'
         ],
@@ -86,7 +87,7 @@ class HomeController extends Controller
             'g-recaptcha-response.required' => 'Recaptcha is required!',
             'g-recaptcha-response.recaptcha' => 'Please ensure that you are a human!'
         ]);
-        
+
         $name = $request->input('name');
         $email = $request->input('email');
         $phone = $request->input('phone');
