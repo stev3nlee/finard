@@ -104,7 +104,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 order-2 xs40 resp-center">
-                    <div class="t-footer"><a href="mailto:the.finard@gmail.com">the.finard@gmail.com</a></div>
+                    <div class="t-footer"><a href="mailto:{{ $company_data->email }}">{{ $company_data->email }}</a></div>
                     <ul class="l-soc">
                         <li><a href="{{ $company_data->facebook }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="{{ $company_data->instagram }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a></li>

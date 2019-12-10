@@ -10,12 +10,12 @@
 					<div class="box">
 						<div class="h1">Text us through LINE</div>
 						<div class="txt">The best and fastest way to contact us anytime.</div>
-						<div class="link"><a href="line://msg/Check this out! https://www.thefinard.com">@the.finard</a></div>
+						<div class="link"><a href="line://msg/Check this out! https://www.thefinard.com">{{ $company_data->line }}</a></div>
 					</div>
 					<div class="box">
 						<div class="h1">Email us</div>
 						<div class="txt">You may choose to contact us through email to:</div>
-						<div class="link"><a href="mailto:hello@thefinard.com">hello@thefinard.com</a></div>
+						<div class="link"><a href="mailto:{{ $company_data->email }}">{{ $company_data->email }}</a></div>
 					</div>
 					<div class="box mb0">
 						<div class="h1">Read Our FAQ</div>
