@@ -84,6 +84,8 @@
 							<label for="message">Message</label>
 							<textarea class="form-control" required="required" type="message" id="message" name="message"></textarea>
 						</div>
+						<div class="g-recaptcha" data-sitekey="6LeCycYUAAAAAN5JXVOKsaaqLeS9syAeZ9SJWVyP"></div>
+						@if($errors->has('g-recaptcha-response')) <div class="alert alert-danger alert-block">{{ $errors->first('g-recaptcha-response') }}</div>  @endif<br>
 						<div class="text-center">
 							<button type="submit" class="btn">SUBMIT</button>
 						</div>

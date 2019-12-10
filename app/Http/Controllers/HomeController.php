@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Contact;
 use App\Models\Quotation;
 use App\Models\About;
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use Mail;
 
@@ -20,6 +21,14 @@ class HomeController extends Controller
     }
     
     public function contact(Request $request){
+        $validatedData = $request->validate([
+            'g-recaptcha-response' => 'required|recaptcha'
+        ],
+        [
+            'g-recaptcha-response.required' => 'Recaptcha is required!',
+            'g-recaptcha-response.recaptcha' => 'Please ensure that you are a human!'
+        ]);
+
         $name = $request->input('name');
         $email = $request->input('email');
         $phone = $request->input('phone');
@@ -70,6 +79,14 @@ class HomeController extends Controller
     }
 
     public function quotation(Request $request){
+        $validatedData = $request->validate([
+            'g-recaptcha-response' => 'required|recaptcha'
+        ],
+        [
+            'g-recaptcha-response.required' => 'Recaptcha is required!',
+            'g-recaptcha-response.recaptcha' => 'Please ensure that you are a human!'
+        ]);
+        
         $name = $request->input('name');
         $email = $request->input('email');
         $phone = $request->input('phone');
@@ -153,5 +170,29 @@ class HomeController extends Controller
     {
         $data = About::first();
         return view('about', ['data' => $data]);
+    }
+
+    public function newsletter(Request $request){
+        $email = $request->input('email');
+
+        $table = new Newsletter;
+        $table->email = $email;
+        $table->save();
+
+        $data = array(
+            'email' => $email,
+        );
+
+        Mail::send('email_newsletter_member', $data , function($contact)use($data)
+        {
+            $contact->from(
+                'noreply@thefinard.com',
+                'The Finard'
+            );
+            $contact->to($data['email']);
+            $contact->subject('The Finard - Newsletter');
+        });
+
+        return redirect('/')->with(['success' => 'Thank you for contacting us! We will get in touch with you shortly.']);
     }
 }

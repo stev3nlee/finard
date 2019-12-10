@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Category;
 use App\Models\Company_data;
+use Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         view()->share('category', Category::all());
         view()->share('company_data', Company_data::first());
+        Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
     }
 }

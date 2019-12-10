@@ -15,6 +15,7 @@
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/front.css?v.1') }}" rel="stylesheet"/>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<!--

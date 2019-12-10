@@ -27,7 +27,7 @@
 			</div>
 			<p style="margin: 0;">Regards,</p>
 			<p style="margin: 0;">The Finard</p>
-			<p style="margin: 0;"><a href="{{ env('WEB_URL') }}" target="_blank" style="color: #0080ff;">{{ env('WEB_URL') }}</a></p>
+			<p style="margin: 0;"><a href="https://www.thefinard.com" target="_blank" style="color: #0080ff;">https://www.thefinard.com</a></p>
 		</div>
 	</div>
 </body>
