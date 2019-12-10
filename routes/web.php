@@ -24,6 +24,7 @@ Route::get('/journal-detail/{slug}', 'JournalController@detail');
 Route::post('/contact-submit', 'HomeController@contact');
 Route::post('/quotation-submit', 'HomeController@quotation');
 Route::get('/about', 'HomeController@about');
+Route::post('/newsletter', 'HomeController@newsletter');
 
 Route::get('/contact', function () {
     return view('contact');

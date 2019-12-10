@@ -45,7 +45,7 @@
                                         </div>
                                     </td>
                                     <td>{{ $content->question }}</td>
-                                    <td>{{ $content->answer }}</td>
+                                    <td>{!! $content->answer !!}</td>
                                     <td>{{ $content->category ? $content->category->name : '' }}</td>
                                     
                                     <td>{{ $content->created_at }}</td>

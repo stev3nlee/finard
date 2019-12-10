@@ -132,10 +132,26 @@
                 <div class="col-md-4 order-1 order-md-3 xs40 resp-center">
                     <div class="t-footer">Keep in Touch</div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="you@domain.com" aria-label="you@domain.com" aria-describedby="">
+                        <form method="post" action="{{ URL::to('/newsletter') }}">
+                            {!! csrf_field() !!}
+                            @if ($message_error = Session::get('error_newsletter'))
+                              <div class="alert alert-danger alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button> 
+                                  <p>{{ $message_error }}</p>
+                              </div>
+                            @endif
+
+                            @if ($message_success= Session::get('success_newsletter'))
+                              <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button> 
+                                  <p>{{ $message_success }}</p>
+                              </div>
+                            @endif
+                        <input type="email" autocomplete="off" name="email" required="required" class="form-control" placeholder="you@domain.com" aria-label="you@domain.com" aria-describedby="">
                         <div class="input-group-append">
-                            <button class="btn" type="button">SIGN UP</button>
+                            <button class="btn" type="submit">SIGN UP</button>
                         </div>
+                        </form>
                     </div>
                     <div class="txt">By entering your email above you agree to receive updates.</div>
                 </div>

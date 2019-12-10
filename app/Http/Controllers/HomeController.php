@@ -8,11 +8,17 @@ use App\Models\Contact;
 use App\Models\Quotation;
 use App\Models\About;
 use App\Models\Newsletter;
+use App\Helper\Mailchimp;
 use Illuminate\Http\Request;
 use Mail;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->Mailchimp = new Mailchimp();
+    }
+
     public function view()
     {
         $data = Banner::orderby('id','desc')->where('status',1)->get();
@@ -174,11 +180,23 @@ class HomeController extends Controller
     }
 
     public function newsletter(Request $request){
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+        ]);
+
         $email = $request->input('email');
 
-        $table = new Newsletter;
-        $table->email = $email;
-        $table->save();
+        $this->Mailchimp->insertMember([
+            'email' => $email
+        ]);
+
+        //return $this->output->returnSuccess();
+
+        // $email = $request->input('email');
+
+        // $table = new Newsletter;
+        // $table->email = $email;
+        // $table->save();
 
         $data = array(
             'email' => $email,
@@ -194,6 +212,6 @@ class HomeController extends Controller
             $contact->subject('The Finard - Newsletter');
         });
 
-        return redirect('/')->with(['success' => 'Thank you for contacting us! We will get in touch with you shortly.']);
+        return back()->with(['success_newsletter' => 'Thank you for subscribing with us!']);
     }
 }
