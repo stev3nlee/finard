@@ -666,6 +666,19 @@ footer .txt {
   font-size: 14px;
   line-height: 26px;
 }
+.main .faq .accordion .box .bdy ul {
+  list-style-type: circle;
+}
+.main .faq .accordion .box .bdy ul li {
+  margin-bottom: 0;
+  color: #908d88;
+  font-size: 14px;
+  line-height: 26px;
+}
+.main .faq .ring-sizer-middle iframe {
+  width: 100% !important;
+  margin: 0 auto;
+}
 .main .title {
   font-weight: bold;
   color: #6a111e;
@@ -1099,6 +1112,70 @@ footer .txt {
   width: 100%;
 }
 
+.modal {
+  text-align: center;
+  -webkit-overflow-scrolling: auto;
+  padding: 0 !important;
+  background-color: transparent;
+}
+.modal .t-pop {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 15px 0 5px;
+}
+.modal .bdy-pop {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.modal .bdy-pop p {
+  font-weight: 200;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 26px;
+}
+.modal .close-pop {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.modal .close-pop i {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #24282e;
+  font-size: 17px;
+  line-height: 0;
+}
+.modal .close-pop i:hover {
+  opacity: 0.7;
+}
+.modal .modal-content {
+  padding: 20px 20px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+  border: 0;
+}
+.modal .modal-body {
+  padding: 0;
+}
+.modal .modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  width: 450px;
+}
+.modal:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
 @media (max-width: 1199px) {
   .main .shop .detail ul.l-btn li {
     margin-right: 10px;
@@ -1212,6 +1289,23 @@ footer .txt {
   }
   footer ul.l-soc {
     margin-top: 0;
+  }
+
+  .modal .modal-dialog {
+    width: 280px;
+  }
+  .modal .modal-dialog .modal-content {
+    padding: 10px 10px 20px;
+  }
+  .modal .modal-dialog .modal-content .t-pop {
+    font-size: 18px;
+  }
+  .modal .modal-dialog .modal-content .bdy-pop {
+    margin-bottom: 15px;
+  }
+  .modal .modal-dialog .modal-content .bdy-pop p {
+    line-height: 20px;
+    font-size: 14px;
   }
 
   .main .popup .popup-overlay .close-pop {

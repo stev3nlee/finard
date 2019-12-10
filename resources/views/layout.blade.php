@@ -14,7 +14,7 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/front.css?v.1') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/front.css?v.2') }}" rel="stylesheet"/>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -147,17 +147,39 @@
                                   <p>{{ $message_success }}</p>
                               </div>
                             @endif
-                        <input type="email" autocomplete="off" name="email" required="required" class="form-control" placeholder="you@domain.com" aria-label="you@domain.com" aria-describedby="">
-                        <div class="input-group-append">
-                            <button class="btn" type="submit">SIGN UP</button>
-                        </div>
+                            <input type="email" autocomplete="off" name="email" required="required" class="form-control" placeholder="hello@thefinard.com" aria-label="you@domain.com" aria-describedby="">
+                            <div class="input-group-append">
+                                <button class="btn" type="submit">SIGN UP</button>
+                            </div>
                         </form>
                     </div>
+                    <!-- NEW -->
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="hello@thefinard.com" aria-label="hello@thefinard.com" aria-describedby="">
+                        <div class="input-group-append">
+                            <a data-toggle="modal" data-target="#success-modal" data-keyboard="true">
+                                <button class="btn" type="button">SIGN UP</button>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END NEW -->
                     <div class="txt">By entering your email above you agree to receive updates.</div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <div id="success-modal" class="modal fade" role="dialog" tabindex='-1'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
+                <div class="t-pop">Success</div>
+                <div class="bdy-pop">
+                    <p>Thank you, please wait for up to 24 hours for us to get reply back to you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- JS -->
 <script type="text/javascript" src="{{ asset('jquery-3.4.1.min.js') }}" ></script>

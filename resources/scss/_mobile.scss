@@ -39,6 +39,24 @@
 			margin-top: 0;
 		}
 	}
+	.modal {
+		.modal-dialog {
+			width: 280px;	
+			.modal-content {
+				padding: 10px 10px 20px;
+				.t-pop {
+					font-size: 18px;
+				}
+				.bdy-pop {
+					margin-bottom: 15px;
+					p {
+						line-height: 20px;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
 	.main {
 		.popup {
 	        .popup-overlay {
