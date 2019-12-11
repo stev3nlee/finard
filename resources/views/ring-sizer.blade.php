@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<h1 style="display:none">The Finard | Ring Sizer</h1>
+
 	<div class="faq pad-global">
 		<div class="container">
 			<div class="title">Find your Ring Size</div>

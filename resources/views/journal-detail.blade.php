@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<h1 style="display:none">The Finard | Finard's Journal </h1>
+
 	<div class="journal pad-global">
 		<div class="container">
 			<div class="text-left back">

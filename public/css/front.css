@@ -1176,6 +1176,11 @@ footer .txt {
   margin-right: -4px;
 }
 
+.alert p {
+  font-size: 13px !important;
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 1199px) {
   .main .shop .detail ul.l-btn li {
     margin-right: 10px;
@@ -1316,7 +1321,7 @@ footer .txt {
     font-size: 20px;
   }
   .main .popup .popup-content {
-    width: 270px;
+    width: 100%;
   }
   .main .popup .popup-content .slider-pop .slick-prev {
     left: -25px;

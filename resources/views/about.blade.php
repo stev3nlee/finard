@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<h1 style="display:none">The Finard | About The Finard </h1>
+
 	<div class="about pad-global">
 		<div class="container">
 			<div class="title">Our Story</div>

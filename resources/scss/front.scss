@@ -1215,6 +1215,12 @@ footer {
         margin-right: -4px;
     }
 }
+.alert { 
+    p {
+        font-size: 13px !important; 
+        margin-bottom:0 !important;
+    }
+}
 
 @import "desktop";
 @import "tablet";

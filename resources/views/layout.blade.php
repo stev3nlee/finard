@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>The Finard</title>
-    <!--<link rel="shortcut icon" type="image/x-icon" href="assets/images/uploads/favicon.ico" />-->
-    
+    <title>The Finard | Daily bits and bobs in shining 18 K gold </title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/uploads/favicon.ico" />
+    <meta name="description" content="The Finard helps you create the bespoke jewelry of your dreams. From unique semi-precious stone to diamond engagement rings.">
+    <meta name="keywords" content="rings, diamond, carat, 18K, gold, engagement, wedding bands, bands, ring, band, jewelry, fine, custom">
+
     <!-- CSS -->
     @yield('css')
     
@@ -117,7 +119,6 @@
                 <div class="col-6 col-md-2 order-3 order-md-2 resp-center">
                     <div class="t-footer">About</div>
                     <ul class="l-footer">
-                        <!-- <li><a href="{{ URL::to('/journal') }}">Journal</a></li> -->
                         <li><a href="{{ URL::to('/ring-sizer') }}">Ring sizer</a></li>
                     </ul>
                 </div>
@@ -131,26 +132,15 @@
                 </div>
                 <div class="col-md-4 order-1 order-md-3 xs40 resp-center">
                     <div class="t-footer">Keep in Touch</div>
-                    <div class="input-group">
-                        <form method="post" action="{{ URL::to('/newsletter') }}">
-                            {!! csrf_field() !!}
-                            
-
-                            <div class="input-group">
-                                <input type="email"  autocomplete="off" name="email" required="required" class="form-control" placeholder="hello@thefinard.com" aria-label="hello@thefinard.com" aria-describedby="">
-                                <div class="input-group-append">
-                                    <!-- <a data-toggle="modal" data-target="#success-modal" data-keyboard="true"> -->
-                                        <button class="btn" type="submit">SIGN UP</button>
-                                    <!-- </a> -->
-                                </div>
+                    <form method="post" action="{{ URL::to('/newsletter') }}">
+                        {!! csrf_field() !!}
+                        <div class="input-group">
+                            <input type="email"  autocomplete="off" name="email" required="required" class="form-control" placeholder="hello@thefinard.com" aria-label="hello@thefinard.com" aria-describedby="">
+                            <div class="input-group-append">
+                                <button class="btn" type="submit">SIGN UP</button>
                             </div>
-                           
-    
-                        </form>
-                    </div>
-                    <!-- NEW -->
-                    
-                    <!-- END NEW -->
+                        </div>
+                    </form>
                     <div class="txt">By entering your email above you agree to receive updates.</div>
                 </div>
             </div>
@@ -164,7 +154,7 @@
                 <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
                 <div class="t-pop">Success</div>
                 <div class="bdy-pop">
-                    <p>Thank you, please wait for up to 24 hours for us to get reply back to you.</p>
+                    <p>Thank you, your email has been subscribed with us. Please wait for the latest updates. </p>
                 </div>
             </div>
         </div>
@@ -178,7 +168,7 @@
                 <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
                 <div class="t-pop">Failed</div>
                 <div class="bdy-pop">
-                    <p>Your email has been regitered before.</p>
+                    <p>Your email has been registered before. Please try again.</p>
                 </div>
             </div>
         </div>
@@ -194,18 +184,15 @@
     $(function() {
             $("#success-modal").modal("toggle");
     });
-    
 </script>
 @endif
 
 @if ($message_error= Session::get('error_newsletter'))
 <script>
     $(function() {
-            $('#success-modal').modal('hide');
-            $("#error-modal").modal("toggle");
-
+        $('#success-modal').modal('hide');
+        $("#error-modal").modal("toggle");
     });
-    
 </script>
 @endif
 

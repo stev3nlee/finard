@@ -6,6 +6,9 @@
 @endsection
 
 @section('content')
+
+	<h1 style="display:none">The Finard | Daily bits and bobs in shining 18 K gold </h1>
+
 	<div class="slider-banner">
 		@foreach($banner as $ban)
 		<div class="item">

@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<h1 style="display:none">The Finard | Contact The Finard </h1>
+
 	<div class="contact">
 		<div class="container">
 			<div class="row">

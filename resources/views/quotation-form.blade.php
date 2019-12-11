@@ -6,6 +6,8 @@
 <link href="{{ asset('rangeslider/rSlider.min.css') }}" rel="stylesheet"/>
 @endsection
 
+	<h1 style="display:none">The Finard | Quotation Form</h1>
+
 	<div class="quotation pad-global">
 		<div class="container">
 			<div class="title">REQUEST FOR QUOTATION</div>
@@ -32,7 +34,7 @@
 						<ul class="l-tick">
 							<li><input name="setting[]" value="No Setting" id="no-setting" type="checkbox"><label for="no-setting">No Setting</label></li>
 						  	<li><input name="setting[]" value="Halo" id="halo" type="checkbox"><label for="halo">Halo</label></li>
-						  	<li><input name="setting[]" value="Pave" id="pave" type="checkbox"><label for="pave">Pave</label></li>
+						  	<li><input name="setting[]" value="Pave" id="pave" type="checkbox"><label for="pave">Pav&#233;</label></li>
 							<li><input name="setting[]" value="Custom" id="custom" type="checkbox"><label for="custom">Custom</label></li>
 						</ul>
 						
