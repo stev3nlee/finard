@@ -63,7 +63,7 @@ class HomeController extends Controller
                 'noreply@thefinard.com',
                 'The Finard'
             );
-            $contact->to('noreply@thefinard.com');
+            $contact->to('hello@thefinard.com');
             $contact->subject('The Finard - Contact Us');
         });
 
@@ -152,7 +152,7 @@ class HomeController extends Controller
                 'noreply@thefinard.com',
                 'The Finard'
             );
-            $contact->to('noreply@thefinard.com');
+            $contact->to('hello@thefinard.com');
             $contact->subject('The Finard - Quotation');
         });
 
