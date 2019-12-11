@@ -74,6 +74,7 @@ class Mailchimp
     public function insertMember($data)
     {
         try {
+            $message = 'success';
             $payload = [];
             $payload['email_address'] = $data['email'];
             $payload['status'] = 'subscribed';
@@ -94,14 +95,15 @@ class Mailchimp
             if ($status_code >= 400) {
                 curl_close($request);
                 if (json_decode($server_output)->title == 'Member Exists') {
-                    return back()->with(['error_newsletter' => 'Your email has been registered before']);;
+                    $message = 'Member Exists';
+                    //return back()->with(['error_newsletter' => 'Your email has been registered before']);
                     //throw new \Exception(json_encode($this->status->error['EMAIL_REGISTERED']));
                 }
                 //dd($server_output);
-                throw new \Exception($server_output);
+                $message = 'Member Exists';
             }
 
-            return json_decode($server_output);
+            return $message;
         } catch (\Exception $e) {
             throw $e;
         }

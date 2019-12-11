@@ -134,34 +134,22 @@
                     <div class="input-group">
                         <form method="post" action="{{ URL::to('/newsletter') }}">
                             {!! csrf_field() !!}
-                            @if ($message_error = Session::get('error_newsletter'))
-                              <div class="alert alert-danger alert-block">
-                                <button type="button" class="close" data-dismiss="alert">×</button> 
-                                  <p>{{ $message_error }}</p>
-                              </div>
-                            @endif
+                            
 
-                            @if ($message_success= Session::get('success_newsletter'))
-                              <div class="alert alert-success alert-block">
-                                <button type="button" class="close" data-dismiss="alert">×</button> 
-                                  <p>{{ $message_success }}</p>
-                              </div>
-                            @endif
-                            <input type="email" autocomplete="off" name="email" required="required" class="form-control" placeholder="hello@thefinard.com" aria-label="you@domain.com" aria-describedby="">
-                            <div class="input-group-append">
-                                <button class="btn" type="submit">SIGN UP</button>
+                            <div class="input-group">
+                                <input type="email"  autocomplete="off" name="email" required="required" class="form-control" placeholder="hello@thefinard.com" aria-label="hello@thefinard.com" aria-describedby="">
+                                <div class="input-group-append">
+                                    <!-- <a data-toggle="modal" data-target="#success-modal" data-keyboard="true"> -->
+                                        <button class="btn" type="submit">SIGN UP</button>
+                                    <!-- </a> -->
+                                </div>
                             </div>
+                           
+    
                         </form>
                     </div>
                     <!-- NEW -->
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="hello@thefinard.com" aria-label="hello@thefinard.com" aria-describedby="">
-                        <div class="input-group-append">
-                            <a data-toggle="modal" data-target="#success-modal" data-keyboard="true">
-                                <button class="btn" type="button">SIGN UP</button>
-                            </a>
-                        </div>
-                    </div>
+                    
                     <!-- END NEW -->
                     <div class="txt">By entering your email above you agree to receive updates.</div>
                 </div>
@@ -169,6 +157,7 @@
         </div>
     </footer>
 
+    @if ($message_success= Session::get('success_newsletter'))
     <div id="success-modal" class="modal fade" role="dialog" tabindex='-1'>
         <div class="modal-dialog">
             <div class="modal-content">
@@ -180,11 +169,46 @@
             </div>
         </div>
     </div>
+    @endif
+
+    @if ($message_error= Session::get('error_newsletter'))
+    <div id="error-modal" class="modal fade" role="dialog" tabindex='-1'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
+                <div class="t-pop">Failed</div>
+                <div class="bdy-pop">
+                    <p>Your email has been regitered before.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 
 <!-- JS -->
 <script type="text/javascript" src="{{ asset('jquery-3.4.1.min.js') }}" ></script>
 <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('web.js') }}"></script>
+@if ($message_success= Session::get('success_newsletter'))
+<script>
+    $(function() {
+            $("#success-modal").modal("toggle");
+    });
+    
+</script>
+@endif
+
+@if ($message_error= Session::get('error_newsletter'))
+<script>
+    $(function() {
+            $('#success-modal').modal('hide');
+            $("#error-modal").modal("toggle");
+
+    });
+    
+</script>
+@endif
+
 @yield('js')
 
 </body>

@@ -186,10 +186,9 @@ class HomeController extends Controller
 
         $email = $request->input('email');
 
-        $this->Mailchimp->insertMember([
+        $mailchimp = $this->Mailchimp->insertMember([
             'email' => $email
         ]);
-
         //return $this->output->returnSuccess();
 
         // $email = $request->input('email');
@@ -197,21 +196,25 @@ class HomeController extends Controller
         // $table = new Newsletter;
         // $table->email = $email;
         // $table->save();
-
-        $data = array(
-            'email' => $email,
-        );
-
-        Mail::send('email_newsletter_member', $data , function($contact)use($data)
-        {
-            $contact->from(
-                'noreply@thefinard.com',
-                'The Finard'
+        if($mailchimp == 'success'){
+            $data = array(
+                'email' => $email,
             );
-            $contact->to($data['email']);
-            $contact->subject('The Finard - Newsletter');
-        });
 
-        return back()->with(['success_newsletter' => 'Thank you for subscribing with us!']);
+            Mail::send('email_newsletter_member', $data , function($contact)use($data)
+            {
+                $contact->from(
+                    'noreply@thefinard.com',
+                    'The Finard'
+                );
+                $contact->to($data['email']);
+                $contact->subject('The Finard - Newsletter');
+            });
+
+            return back()->with(['success_newsletter' => 'Thank you for subscribing with us!']);
+        }else{
+            return back()->with(['error_newsletter' => 'Your email has been registered before']);
+        }
+        
     }
 }
