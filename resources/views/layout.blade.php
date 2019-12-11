@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>The Finard | Daily bits and bobs in shining 18 K gold </title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/uploads/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('thefinard.ico') }}" />
     <meta name="description" content="The Finard helps you create the bespoke jewelry of your dreams. From unique semi-precious stone to diamond engagement rings.">
     <meta name="keywords" content="rings, diamond, carat, 18K, gold, engagement, wedding bands, bands, ring, band, jewelry, fine, custom">
 
