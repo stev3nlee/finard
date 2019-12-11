@@ -20,7 +20,6 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!--
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154228788-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -29,7 +28,6 @@
 
 	  gtag('config', 'UA-154228788-1');
 	</script>
-	-->
 
 </head>
 <body>
