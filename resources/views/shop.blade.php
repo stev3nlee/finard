@@ -34,7 +34,7 @@
 								@if($list->price)
 								<div class="float-right">STARTS FROM IDR {{ number_format($list->price,0,",",".") }}</div>
 								@else
-								<div class="float-right">Price Upon Request</div>
+								<div class="float-right">PRICE UPON REQUEST</div>
 								@endif
 							</div>
 						</a>
