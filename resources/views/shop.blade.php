@@ -31,7 +31,11 @@
 							<div class="nm">{{ $list->name }}</div>
 							<div class="clearfix price">
 								<div class="float-left">{{ $list->gold }}K Gold</div>
+								@if($list->price)
 								<div class="float-right">STARTS FROM IDR {{ number_format($list->price,0,",",".") }}</div>
+								@else
+								<div class="float-right">Price Upon Request</div>
+								@endif
 							</div>
 						</a>
 					</div>
