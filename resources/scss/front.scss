@@ -124,6 +124,9 @@ header {
 .visible-md {
     display: none;
 }
+.visible-xs {
+    display: none;
+}
 
 .main-menu {
     position: relative;
@@ -497,7 +500,7 @@ footer {
                 }
                 .txt {
                     font-size: 14px;
-                    color: #716c64;
+                    color: #73706b;
                     margin-bottom: 3px;
                 }
                 .link {
@@ -555,6 +558,7 @@ footer {
         .box-slider {
             width:100%;
             margin:0 auto;
+            padding: 0 20px;
             .slider-container { 
                margin:40px 0;
             }    
@@ -647,7 +651,7 @@ footer {
                 .nm {
                     a {
                         display: inline-block;
-                        color: #b16e03;
+                        color: #a06404;
                         padding-left: 13px;
                         font-size: 17px;
                         line-height: 30px;
@@ -677,7 +681,7 @@ footer {
                     margin-bottom: 20px;
                     p {
                         margin-bottom: 0;
-                        color: #908d88;
+                        color: #73706b;
                         font-size: 14px;
                         line-height: 26px;
                     }
@@ -685,7 +689,7 @@ footer {
                         list-style-type: circle;
                         li {
                         margin-bottom: 0;
-                        color: #908d88;
+                        color: #73706b;
                         font-size: 14px;
                         line-height: 26px;
                         }
@@ -775,7 +779,7 @@ footer {
                 .price {
                     font-size: 14px;
                     line-height: 20px;
-                    color: #908d88;
+                    color: #73706b;
                 }
             }
         }
@@ -1095,6 +1099,11 @@ footer {
             }
         }
         .item {
+            .bg-img {
+                background-size: cover !important;
+                width: 100%;
+                height: calc(100vh - 60px);
+            }
             .img {
                 img {
                     width: 100%;

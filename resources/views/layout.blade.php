@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
     <title>The Finard | Daily bits and bobs in shining 18 K gold </title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('thefinard.ico') }}" />
     <meta name="description" content="The Finard helps you create the bespoke jewelry of your dreams. From unique semi-precious stone to diamond engagement rings.">
@@ -20,6 +20,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154228788-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -28,6 +29,7 @@
 
 	  gtag('config', 'UA-154228788-1');
 	</script>
+    -->
 
 </head>
 <body>
@@ -41,7 +43,7 @@
                 </div>
                 <div class="col-6 col-lg-12 my-auto">
                     <div class="logo">
-                        <a href="{{ URL::to('/') }}">
+                        <a href="{{ URL::to('/') }}" aria-label="The Finard">
                             <img src="{{ asset('images/logo.png') }}" alt="" title=""/>
                         </a>
                     </div>
@@ -106,12 +108,12 @@
                 <div class="col-md-3 order-2 xs40 resp-center">
                     <div class="t-footer"><a href="mailto:{{ $company_data->email }}">{{ $company_data->email }}</a></div>
                     <ul class="l-soc">
-                        <li><a href="{{ $company_data->facebook }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="{{ $company_data->instagram }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="{{ $company_data->pinterest }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-pinterest"></i></a></li>
+                        <li><a href="{{ $company_data->facebook }}"  aria-label="Facebook The Finard" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ $company_data->instagram }}" aria-label="Instagram The Finard" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ $company_data->pinterest }}" aria-label="Pinterest The Finard" target="_blank" rel="noreferrer noopener"><i class="fab fa-pinterest"></i></a></li>
                     </ul>
                     <div class="img">
-                        <a href="{{ $company_data->bridestory }}" title="The Finard" target="_blank" rel="dofollow"><img alt="The Finard" width="164" height="25" src="https://business.bridestory.com/assets/images/badges/certified/pink.png" /></a>
+                        <a href="{{ $company_data->bridestory }}" aria-label="Bridestory The Finard" title="The Finard" target="_blank" rel="noreferrer noopener"><img alt="The Finard" width="164" height="25" src="https://business.bridestory.com/assets/images/badges/certified/pink.png" /></a>
                     </div>
                 </div>
                 <div class="col-6 col-md-2 order-3 order-md-2 resp-center">
@@ -124,7 +126,7 @@
                     <div class="t-footer">Support</div>
                     <ul class="l-footer">
                         <li><a href="{{ URL::to('/faq') }}">FAQ</a></li>
-                        <li><a href="https://www.jne.co.id/en/tracking/trace" target="_blank">Track Package</a></li>
+                        <li><a href="https://www.jne.co.id/en/tracking/trace" target="_blank" rel="noreferrer noopener">Track Package</a></li>
                         <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
                     </ul>
                 </div>

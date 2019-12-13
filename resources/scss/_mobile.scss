@@ -8,6 +8,12 @@
 	.xs20 {
 		margin-bottom: 20px;
 	}
+	.hidden-xs {
+		display: none;
+	}
+	.visible-xs {
+		display: block;
+	}
 	header {
 		.box-menu {
 	        padding: 20px 0 40px;
@@ -236,8 +242,9 @@
 	                    height: 5px;
 	                }
 	            }
-	        }
-	    }
+			}
+		}
+		
 		.banner-text {
 	        padding: 40px 0;
 	        .img {

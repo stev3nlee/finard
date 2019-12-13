@@ -9,10 +9,17 @@
 
 	<h1 style="display:none">The Finard | Daily bits and bobs in shining 18 K gold </h1>
 
-	<div class="slider-banner">
+	<div class="slider-banner hidden-xs">
 		@foreach($banner as $ban)
 		<div class="item">
 			<div class="img"><img src="{{ asset('/upload/'.$ban->image) }}" alt="" title=""/></div>
+		</div>
+		@endforeach
+	</div>
+	<div class="slider-banner visible-xs">
+		@foreach($banner as $ban)
+		<div class="item">
+			<div class="bg-img" style="background: url('{{ asset('/upload/'.$ban->image) }}') no-repeat center; "></div>
 		</div>
 		@endforeach
 	</div>
@@ -76,7 +83,7 @@
 		$('.slider-banner').slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			dots: true,
+			dots: false,
 			centerMode: false,
 			arrows: false,
 			infinite: true,

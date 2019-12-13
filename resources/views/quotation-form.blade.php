@@ -32,7 +32,7 @@
 						
 						<div class="label-name">SETTING</div>
 						<ul class="l-tick">
-							<li><input name="setting[]" value="No Setting" id="no-setting" type="checkbox"><label for="no-setting">No Setting</label></li>
+							<li><input name="setting[]" value="Solitaire" id="no-setting" type="checkbox"><label for="no-setting">Solitaire</label></li>
 						  	<li><input name="setting[]" value="Halo" id="halo" type="checkbox"><label for="halo">Halo</label></li>
 						  	<li><input name="setting[]" value="Pave" id="pave" type="checkbox"><label for="pave">Pav&#233;</label></li>
 							<li><input name="setting[]" value="Custom" id="custom" type="checkbox"><label for="custom">Custom</label></li>
@@ -54,8 +54,8 @@
 
 						<div class="label-name">Style References (Optional)</div>
 					    <div class="upload-image">
-					        <div>Upload Photos</div>
-					        <input name="image" type="file" placeholder="test" />
+					        <label for="upload" style="margin:0;padding:0;">Upload Photos</label>
+					        <input name="image" type="file" id="upload" placeholder="test" />
 					    </div>
 					</div>
 					<div class="col-md-6 offset-md-1 right-quotation">
