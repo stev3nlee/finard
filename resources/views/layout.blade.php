@@ -16,11 +16,10 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/front.css?v.2') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/front.css?v.1.2') }}" rel="stylesheet"/>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-    <!--
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154228788-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -29,7 +28,6 @@
 
 	  gtag('config', 'UA-154228788-1');
 	</script>
-    -->
 
 </head>
 <body>
@@ -143,6 +141,9 @@
                     </form>
                     <div class="txt">By entering your email above you agree to receive updates.</div>
                 </div>
+            </div>
+            <div class="cp">
+                <p> &copy;<?php echo date("Y"); ?> THE FINARD. CRAFTED BY <a href="https://dilenium.com" target="_blank" rel="noreferrer noopener">DILENIUM</a>. </p> 
             </div>
         </div>
     </footer>

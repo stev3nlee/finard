@@ -240,7 +240,7 @@ header {
 
 footer {
     border-top: 1px solid #e4e8ef;
-    padding: 50px 0;
+    padding: 50px 0 10px 0;
     .input-group {
         input {
             border-radius: 0;
@@ -332,6 +332,19 @@ footer {
         font-size: 12px;
         opacity: 0.7;
         line-height: 15px;
+    }
+    .cp { 
+        font-size: 12px; 
+        margin:0 auto;
+        width: 100%;
+        text-align: center;
+        margin-top:50px;
+        a {
+            @include transition(all 0.3s);
+            &:hover {
+                color: $gold;
+            }
+        }
     }
 }
 
@@ -500,7 +513,7 @@ footer {
                 }
                 .txt {
                     font-size: 14px;
-                    color: #73706b;
+                    color: #5f5e5e;
                     margin-bottom: 3px;
                 }
                 .link {
@@ -515,7 +528,7 @@ footer {
                     a {
                         font-size: 16px;
                         cursor: pointer;
-                        color: #b16e03;
+                        color: #8a5400;
                         @include transition(all 0.3s);
                         &:hover {
                             color: $red;

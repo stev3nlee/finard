@@ -2,7 +2,13 @@
 
 @section('content')
 
-	<h1 style="display:none">The Finard | About The Finard </h1>
+@section('css')
+	<style>
+		h1 { display:none; }
+	</style>
+@endsection
+
+	<h1>The Finard | About The Finard </h1>
 
 	<div class="about pad-global">
 		<div class="container">

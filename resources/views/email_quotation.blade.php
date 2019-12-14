@@ -83,9 +83,11 @@
 			@endif
 		</div>
 		<div style="padding: 15px 0;font-size:12px;">
+			<!--
 			<div>
 				<p style="font-style: italic;color: #797979;">Note: Please do not reply this emaiil as this email is auto generated system.</p>
 			</div>
+			-->
 			<p style="margin: 0;">Regards,</p>
 			<p style="margin: 0;">The Finard</p>
 			<p style="margin: 0;"><a href="https://www.thefinard.com" target="_blank" style="color: #0080ff;">https://www.thefinard.com</a></p>

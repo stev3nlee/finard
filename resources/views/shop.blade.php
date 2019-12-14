@@ -1,13 +1,16 @@
 @extends('layout')
 
 @section('css')
-<link href="{{ asset('slick/slick.css') }}" rel="stylesheet"/>
-<link href="{{ asset('slick/slick-theme.css') }}" rel="stylesheet"/>
+	<link href="{{ asset('slick/slick.css') }}" rel="stylesheet"/>
+	<link href="{{ asset('slick/slick-theme.css') }}" rel="stylesheet"/>
+	<style>
+		h1 { display:none; }
+	</style>
 @endsection
 
 @section('content')
 
-	<h1 style="display:none"> The Finard | Daily bits and bobs in shining 18 K gold </h1>
+	<h1> The Finard | Daily bits and bobs in shining 18 K gold </h1>
 
 	<div class="shop pad-global">
 		<div class="container">

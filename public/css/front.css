@@ -225,7 +225,7 @@ header .logo a {
 
 footer {
   border-top: 1px solid #e4e8ef;
-  padding: 50px 0;
+  padding: 50px 0 10px 0;
 }
 footer .input-group input {
   border-radius: 0;
@@ -320,6 +320,21 @@ footer .txt {
   font-size: 12px;
   opacity: 0.7;
   line-height: 15px;
+}
+footer .cp {
+  font-size: 12px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+footer .cp a {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+footer .cp a:hover {
+  color: #704c2d;
 }
 
 .btn {
@@ -491,7 +506,7 @@ footer .txt {
 }
 .main .contact .left-contact .box .txt {
   font-size: 14px;
-  color: #73706b;
+  color: #5f5e5e;
   margin-bottom: 3px;
 }
 .main .contact .left-contact .box .link.bdr a {
@@ -503,7 +518,7 @@ footer .txt {
 .main .contact .left-contact .box .link a {
   font-size: 16px;
   cursor: pointer;
-  color: #b16e03;
+  color: #8a5400;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
@@ -1312,6 +1327,9 @@ footer .txt {
   }
   footer ul.l-soc {
     margin-top: 0;
+  }
+  footer .cp {
+    font-size: 10px;
   }
 
   .modal .modal-dialog {

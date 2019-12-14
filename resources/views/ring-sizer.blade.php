@@ -2,7 +2,13 @@
 
 @section('content')
 
-	<h1 style="display:none">The Finard | Ring Sizer</h1>
+@section('css')
+<style>
+	h1 { display:none; }
+</style>
+@endsection
+
+	<h1>The Finard | Ring Sizer</h1>
 
 	<div class="faq pad-global">
 		<div class="container">

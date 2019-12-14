@@ -4,9 +4,13 @@
 
 @section('css')
 <link href="{{ asset('rangeslider/rSlider.min.css') }}" rel="stylesheet"/>
+	<style>
+		h1 {display:none;}
+		.upload-image label{margin:0;padding:0;}
+	</style>
 @endsection
 
-	<h1 style="display:none">The Finard | Quotation Form</h1>
+	<h1>The Finard | Quotation Form</h1>
 
 	<div class="quotation pad-global">
 		<div class="container">
@@ -54,7 +58,7 @@
 
 						<div class="label-name">Style References (Optional)</div>
 					    <div class="upload-image">
-					        <label for="upload" style="margin:0;padding:0;">Upload Photos</label>
+					        <label for="upload">Upload Photos</label>
 					        <input name="image" type="file" id="upload" placeholder="test" />
 					    </div>
 					</div>
