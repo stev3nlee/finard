@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
     <title>The Finard | Daily bits and bobs in shining 18 K gold </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('thefinard.ico') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon/thefinard.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
     <meta name="description" content="The Finard helps you create the bespoke jewelry of your dreams. From unique semi-precious stone to diamond engagement rings.">
     <meta name="keywords" content="rings, diamond, carat, 18K, gold, engagement, wedding bands, bands, ring, band, jewelry, fine, custom">
 
@@ -16,7 +20,7 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/front.css?v.1.2') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/front.css?v.2') }}" rel="stylesheet"/>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
