@@ -34,7 +34,8 @@
 	</script>
 
     <style>
-        .fix-wa { position: fixed; left: 10px; bottom: 50px; z-index: 100; }
+        .fix-wa { position: fixed; right: 15px; bottom: 50px; z-index: 100; }
+        .fix-wa img { height: 40px; }
         @media (max-width: 767px) {
             .fix-wa img { width: 40px; }
         }
@@ -188,6 +189,7 @@
     @endif
 
 <div class="fix-wa">
+    <div style="font-size: 12px; text-align:center; color:#6a111e; font-weight:bold;"> Hi!</div>
 	<a href="https://api.whatsapp.com/send?phone=62816295230" target="_blank">
 		<img src="{{ url('images/whatsapp.png')}}">
 	</a>
