@@ -33,6 +33,13 @@
 	  gtag('config', 'UA-154228788-1');
 	</script>
 
+    <style>
+        .fix-wa { position: fixed; left: 10px; bottom: 50px; z-index: 100; }
+        @media (max-width: 767px) {
+            .fix-wa img { width: 40px; }
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -179,6 +186,12 @@
         </div>
     </div>
     @endif
+
+<div class="fix-wa">
+	<a href="https://api.whatsapp.com/send?phone=62816295230" target="_blank">
+		<img src="{{ url('images/whatsapp.png')}}">
+	</a>
+</div>
 
 <!-- JS -->
 <script type="text/javascript" src="{{ asset('jquery-3.4.1.min.js') }}" ></script>
