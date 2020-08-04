@@ -189,7 +189,7 @@
     @endif
 
 <div class="fix-wa">
-    <div style="font-size: 12px; text-align:center; color:#6a111e; font-weight:bold;"> Hi!</div>
+    <div style="font-size: 10px; text-align:center; color:#6a111e; font-weight:bold;"> Hi!</div>
 	<a href="https://api.whatsapp.com/send?phone=62816295230" target="_blank">
 		<img src="{{ url('images/whatsapp.png')}}">
 	</a>

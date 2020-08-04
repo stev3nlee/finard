@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>CONTACT US</title>
+<title>QUOTATION FORM</title>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;line-height: 24px;">
 	<div style="width:600px;margin:0 auto;background-color:#fff;">
@@ -15,7 +15,7 @@
 			<p>Hi Admin,</p>
 		</div>
 		<div>
-			<p>{{ $name }} sent an contact form.</p>
+			<p>{{ $name }} sent an quotation form.</p>
 		</div>
 		<div>
 			<p>Please check the following details:</p>
