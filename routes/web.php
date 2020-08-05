@@ -38,6 +38,10 @@ Route::get('/ring-sizer', function () {
     return view('ring-sizer');
 });
 
+Route::get('/appointment', function () {
+    return view('appointment');
+});
+
 Route::group(['prefix' => 'finard-admin'], function () {
     Route::get('/', function () {
         return redirect('finard-admin/login');
