@@ -12,6 +12,28 @@
 		display: none;
 	}
 	.main {
+		.form-group {
+			.tbl {
+	            &.table-form {
+	                .cell {
+	                    &.w260 {
+	                        width: 240px;
+	                        label {
+	                            width: 240px;
+	                        }
+	                    }
+	                    input {
+	                        width: 100%;
+	                    }
+	                }
+	            }
+	        }
+			&.big {
+				label {
+					font-size: 15px;
+				}
+			}
+		}
 		.popup {
 	        .popup-content {
 	            width: 600px;
@@ -54,6 +76,22 @@
 	    }
 	    .pad-global {
 	    	padding: 40px 0;
+	    }
+	    .appointment {
+	        .t {
+	            font-size: 20px;
+	            margin-bottom: 20px;
+	        }
+	        .tbl {
+	            .cell {
+	                &.bg {
+	                    height: 550px;
+	                }
+	                &.img {
+	                    height: 550px;
+	                }
+	            }
+	        }
 	    }
 	    .contact {
 	        .left-contact {

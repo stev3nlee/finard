@@ -117,7 +117,33 @@
 	        }
 		}
 		.form-group {
-	        margin-bottom: 15px;
+	        margin-bottom: 20px;
+	        .tbl {
+	            &.table-form {
+	            	display: block;
+	                .cell {
+                    	display: block;
+	                    &.w260 {
+	                        width: 100%;
+	                        label {
+	                        	margin-bottom: 10px;
+	                            width: auto;
+	                        }
+	                    }
+	                    input {
+	                        width: 100%;
+	                    }
+	                }
+	            }
+	        }
+	        &.big {
+	        	&.mb0 {
+	        		margin-bottom: 20px;
+	        	}
+	        	label {
+	        		font-size: 14px;
+	        	}
+	        }
 	        label {
 	            font-size: 13px;
 	            margin-bottom: 5px;
@@ -128,6 +154,76 @@
 	    }
 	    .form-control {
 	        font-size: 14px;
+	    }
+	    .appointment {
+	    	.calendar {
+	            .pignose-calendar {
+	                .pignose-calendar-top {
+	                    padding: 1em 0;
+	                    .pignose-calendar-top-nav.pignose-calendar-top-prev {
+	                    	margin-left: 0.5em;
+	                    }
+	                    .pignose-calendar-top-nav.pignose-calendar-top-next {
+	                    	margin-right: 0.5em;
+	                    }
+	                    .pignose-calendar-top-month {
+	                        margin-bottom: 0;
+	                        font-size: 100%;
+	                    }
+	                    .pignose-calendar-top-year {
+	                        font-size: 90%;
+	                    }
+	                    .pignose-calendar-top-date {
+	                        padding: 0.5em 0;
+	                    }
+	                }
+	            }
+	        }
+	    	.pad60 {
+	    		padding: 40px 0;
+	    	}
+	    	.img-appointment {
+	    		display: block;
+	    	}
+	    	.abs {
+	    		background-color: #e8d9c2;
+	    		padding: 40px 0;
+	            position: relative;
+	            top: 0;
+	            @include transform(translateY(0));
+	            ul.l {
+	                li {
+	                    a {
+	                        font-size: 14px;
+	                    }
+	                }
+	            }
+	        }
+	        .t {
+                font-size: 18px;
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+            .t-appo {
+            	font-size: 15px;
+            	line-height: 23px;
+            	margin-bottom: 15px;
+            }
+	        .box {
+	            margin-bottom: 25px;
+	            .h1 {
+                    font-size: 15px;
+                    line-height: 23px;
+                }
+                .txt {
+                    font-size: 14px;
+                    color: #716c64;
+                    margin-bottom: 3px;
+                }
+	        }
+	        .tbl {
+	            display: none;
+	        }
 	    }
 		.contact {
 	        .left-contact {

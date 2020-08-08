@@ -38,9 +38,12 @@ Route::get('/ring-sizer', function () {
     return view('ring-sizer');
 });
 
-Route::get('/appointment', function () {
-    return view('appointment');
-});
+//Route::get('/appointment-engagement', function () {
+//    return view('appointment-engagement');
+//});
+//Route::get('/appointment-wedding', function () {
+//   return view('appointment-wedding');
+//});
 
 Route::group(['prefix' => 'finard-admin'], function () {
     Route::get('/', function () {
