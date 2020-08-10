@@ -109,7 +109,7 @@
 										<li>
 	                                        <a>
 	                                            <input type="checkbox" value="Round Brilliant" id="Round Brilliant" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Round Brilliant", old('checkbox_diamond'))) checked @endif @endif>
-	                                            <label for="Oval">Round Brilliant</label>
+	                                            <label for="Round Brilliant">Round Brilliant</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
