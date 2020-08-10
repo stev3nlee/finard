@@ -277,7 +277,7 @@
                 <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
                 <div class="t-pop">Success</div>
                 <div class="bdy-pop">
-                    <p>Thank you. </p>
+                    <p>Thank you for booking an appointment with us! We will get in touch with you shortly.</p>
                 </div>
             </div>
         </div>
