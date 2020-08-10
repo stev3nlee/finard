@@ -70,6 +70,7 @@ class HomeController extends Controller
 
         $data = array(
             'email' => $email,
+            'name' => $name,
         );
 
         Mail::send('email_contact_us_member', $data , function($contact)use($data)

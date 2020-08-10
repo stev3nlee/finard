@@ -12,7 +12,7 @@
 			</a>
 		</div>
 		<div style="margin-bottom: 20px;">
-			<p>Hi {{ $email }},</p>
+			<p>Hi {{ $name }},</p>
 		</div>
 		<div style="margin-bottom: 10px;">
 			<p>Thank you for contacting us!</p>
