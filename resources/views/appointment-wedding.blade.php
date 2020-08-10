@@ -12,7 +12,7 @@
    }
 </style>
 	<div class="appointment">
-		<div class="img-appointment"><img src="{{ asset('images/img-ring.jpg') }}" alt="" title=""/></div>
+		<div class="img-appointment"><img src="{{ asset('images/img-ring.jpg?v.2') }}" alt="" title=""/></div>
 		<div class="pos-rel">
 			<div class="tbl">
 				<div class="cell bg">
@@ -26,7 +26,7 @@
 							<div class="t">BOOK AN APPOINTMENT</div>
 							<div class="box">
 								<div class="h1">Virtual Appointment</div>
-								<div class="txt">Akzidenz-Grotesk is a sans-serif or grotesque tradition general-purpose, 'trade' sometimes been typeface sold opposed to.</div>
+								<div class="txt">Due to uncertain times like this, we're unable to consult in person. We hope through this virtual chat, you are able to consult at ease from the comfort of your home.</div>
 							</div>
 							<div class="box mb0">
 								<div class="h1">Type of Appointment:</div>
@@ -107,6 +107,7 @@
 									<div class="form-group big">
 										<label for="groom-ring">Groom’s ring size</label>
 										<input class="form-control only-number" type="text" id="groom-ring" name="groom_ring" value="{{ old('groom_ring') }}"/>
+										<span style="color:grey; font-size:12px; font-style:italic; text-decoration:underline;"> <a href="https://thefinard.com/ring-sizer" target="_blank">Ring size guide</a> </span>
 										@if($errors->has('groom_ring')) <span class="help-block">{{ $errors->first('groom_ring') }}</span>  @endif
 									</div>
 								</div>
@@ -114,6 +115,7 @@
 									<div class="form-group big">
 										<label for="bride-ring">Bride’s ring size</label>
 										<input class="form-control only-number" type="text" id="bride-ring" name="bride_ring" value="{{ old('bride_ring') }}"/>
+										<span style="color:grey; font-size:12px; font-style:italic; text-decoration:underline;"> <a href="https://thefinard.com/ring-sizer" target="_blank">Ring size guide</a> </span>
 										@if($errors->has('bride_ring')) <span class="help-block">{{ $errors->first('bride_ring') }}</span>  @endif
 									</div>
 								</div>
