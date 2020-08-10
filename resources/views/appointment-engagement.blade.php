@@ -106,6 +106,12 @@
 								<label>Select the diamond shape(s) you are interested in (pick more than one)*</label>
 								<div class="clearfix">
 									<ul class="css-radio">
+										<li>
+	                                        <a>
+	                                            <input type="checkbox" value="Round Brilliant" id="Round Brilliant" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Round Brilliant", old('checkbox_diamond'))) checked @endif @endif>
+	                                            <label for="Oval">Round Brilliant</label>
+	                                        </a>
+	                                    </li>
 	                                    <li>
 	                                        <a>
 	                                            <input type="checkbox" value="Oval" id="Oval" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Oval", old('checkbox_diamond'))) checked @endif @endif>
@@ -114,7 +120,7 @@
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" value="Cushion" id="Cushion" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Oval", old('checkbox_diamond'))) checked @endif @endif>
+	                                            <input type="checkbox" value="Cushion" id="Cushion" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Cushion", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Cushion">Cushion</label>
 	                                        </a>
 	                                    </li>
@@ -340,7 +346,7 @@
                 <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
                 <div class="t-pop">Success</div>
                 <div class="bdy-pop">
-                    <p>Thank you. </p>
+                    <p>Thank you for booking an appointment with us! We will get in touch with you shortly.</p>
                 </div>
             </div>
         </div>
