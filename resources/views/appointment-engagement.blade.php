@@ -5,7 +5,12 @@
 @endsection
 
 @section('content')
-
+<style>
+	.help-block {
+      color: red;
+	  font-size:14px;
+   }
+</style>
 	<div class="appointment">
 		<div class="img-appointment"><img src="{{ asset('images/img-ring.jpg') }}" alt="" title=""/></div>
 		<div class="pos-rel">
@@ -52,7 +57,8 @@
 						</div>
 					</div>
 					<div class="col-md-7">
-						<form>
+						<form method="POST" action="{{ URL::to('/submit-engagement') }}">
+						{!! csrf_field() !!}
 							<div class="row">
 								<div class="col-md-9 col-lg-7">
 									<div class="form-group big">
@@ -61,6 +67,7 @@
 										<div class="box"></div>
 									</div>
 								</div>
+								<input type="hidden" name="date_appointment" class="date_appointment" value="{{ old('date_appointment') }}">
 								<div class="col-lg-3 offset-lg-1">
 									<div class="form-group big">
 										<label>Select Time</label>
@@ -71,23 +78,27 @@
 										</ul>
 									</div>
 								</div>
+								<input type="hidden" name="time_appointment" class="time_appointment" value="10:00 - 12:00">
 							</div>
 							<div class="t-appo">Personal Data</div>
 							<div class="form-group big">
 								<label for="name">Name</label>
-								<input class="form-control" type="text" id="name" name="name"/>
+								<input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}" />
+								@if($errors->has('name')) <span class="help-block">{{ $errors->first('name') }}</span>  @endif
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group big">
 										<label for="email">Email</label>
-										<input class="form-control" type="text" id="email" name="email"/>
+										<input class="form-control" type="text" id="email" name="email" value="{{ old('email') }}"/>
+										@if($errors->has('email')) <span class="help-block">{{ $errors->first('email') }}</span>  @endif
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group big">
 										<label for="phone">Phone</label>
-										<input class="form-control only-number" type="text" id="phone" name="phone"/>
+										<input class="form-control only-number" type="text" id="phone" name="phone" value="{{ old('phone') }}"/>
+										@if($errors->has('phone')) <span class="help-block">{{ $errors->first('phone') }}</span>  @endif
 									</div>
 								</div>
 							</div>
@@ -97,83 +108,85 @@
 									<ul class="css-radio">
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Oval" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Oval" id="Oval" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Oval", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Oval">Oval</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Cushion" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Cushion" id="Cushion" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Oval", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Cushion">Cushion</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Pear" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Pear" id="Pear" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Pear", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Pear">Pear</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Emerald" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Emerald" id="Emerald" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Emerald", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Emerald">Emerald</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Princess" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Princess" id="Princess" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Princess", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Princess">Princess</label>
 	                                        </a>
 	                                    </li>
 	                                   	<li>
 	                                        <a>
-	                                            <input type="checkbox" id="Asscher" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Asscher" id="Asscher" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Asscher", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Asscher">Asscher</label>
 	                                        </a>
 	                                    </li> 
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Marquise" name="checkbox-diamond">
+	                                            <input type="checkbox" value="Marquise" id="Marquise" name="checkbox_diamond[]" @if(old('checkbox_diamond')) @if(in_array("Marquise", old('checkbox_diamond'))) checked @endif @endif>
 	                                            <label for="Marquise">Marquise</label>
 	                                        </a>
 	                                    </li>
 	                                </ul>
 	                            </div>
+	                            @if($errors->has('checkbox_diamond')) <span class="help-block">{{ $errors->first('checkbox_diamond') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label>Select your desired carat weight (pick one)*</label>
 								<ul class="css-radio block">
                                     <li>
                                         <a>
-                                            <input type="radio" id="Under 0.3ct" name="radio-weight">
+                                            <input type="radio" value="Under 0.3ct" id="Under 0.3ct" name="radio_weight" @if(old('radio_weight') == 'Under 0.3ct') checked @endif>
                                             <label for="Under 0.3ct">Under 0.3ct</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="0.3ct - 0.5ct" name="radio-weight">
+                                            <input type="radio" value="0.3ct - 0.5ct" id="0.3ct - 0.5ct" name="radio_weight" @if(old('radio_weight') == '0.3ct - 0.5ct') checked @endif>
                                             <label for="0.3ct - 0.5ct">0.3ct - 0.5ct</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="0.5ct - 0.7ct" name="radio-weight">
+                                            <input type="radio" value="0.5ct - 0.7ct" id="0.5ct - 0.7ct" name="radio_weight" @if(old('radio_weight') == '0.5ct - 0.7ct') checked @endif>
                                             <label for="0.5ct - 0.7ct">0.5ct - 0.7ct</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="0.7ct - 1ct" name="radio-weight">
+                                            <input type="radio" value="0.7ct - 1ct" id="0.7ct - 1ct" name="radio_weight" @if(old('radio_weight') == '0.7ct - 1ct') checked @endif>
                                             <label for="0.7ct - 1ct">0.7ct - 1ct</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="Above 1ct" name="radio-weight">
+                                            <input type="radio" value="Above 1ct" id="Above 1ct" name="radio_weight" @if(old('radio_weight') == 'Above 1ct') checked @endif>
                                             <label for="Above 1ct">Above 1ct</label>
                                         </a>
                                     </li>
                                 </ul>
+                                @if($errors->has('radio_weight')) <span class="help-block">{{ $errors->first('radio_weight') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label>Select the styles you are interested in (can pick more than one)*</label>
@@ -181,36 +194,37 @@
 									<ul class="css-radio block">
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Solitaire" name="checkbox-interested">
+	                                            <input type="checkbox" value="Solitaire" id="Solitaire" name="checkbox_interested[]" @if(old('checkbox_interested')) @if(in_array("Solitaire", old('checkbox_interested'))) checked @endif @endif>
 	                                            <label for="Solitaire">Solitaire</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Halo" name="checkbox-interested">
+	                                            <input type="checkbox" value="Halo" id="Halo" name="checkbox_interested[]" @if(old('checkbox_interested')) @if(in_array("Halo", old('checkbox_interested'))) checked @endif @endif>
 	                                            <label for="Halo">Halo</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Bezel" name="checkbox-interested">
+	                                            <input type="checkbox" value="Bezel" id="Bezel" name="checkbox_interested[]" @if(old('checkbox_interested')) @if(in_array("Bezel", old('checkbox_interested'))) checked @endif @endif>
 	                                            <label for="Bezel">Bezel</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Three Stone" name="checkbox-interested">
+	                                            <input type="checkbox" value="Three Stone" id="Three Stone" name="checkbox_interested[]" @if(old('checkbox_interested')) @if(in_array("Three Stone", old('checkbox_interested'))) checked @endif @endif>
 	                                            <label for="Three Stone">Three Stone</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Pave" name="checkbox-interested">
+	                                            <input type="checkbox" value="Pave" id="Pave" name="checkbox_interested[]" @if(old('checkbox_interested')) @if(in_array("Pave", old('checkbox_interested'))) checked @endif @endif>
 	                                            <label for="Pave">Pave</label>
 	                                        </a>
 	                                    </li>
 	                                </ul>
 	                            </div>
+	                            @if($errors->has('checkbox_interested')) <span class="help-block">{{ $errors->first('checkbox_interested') }}</span>  @endif
 							</div>
 							<div class="form-group big mb0">
 								<div class="tbl table-form">
@@ -218,46 +232,50 @@
 										<label for="milliom">Enter your budget (in millions)*</label>
 									</div>
 									<div class="cell">	
-										<input class="form-control only-number" type="text" id="milliom" name="milliom"/>
+										<input class="form-control only-number" type="text" id="milliom" name="budget" value="{{ old('budget') }}" />
 									</div>
 								</div>
+								@if($errors->has('budget')) <span class="help-block">{{ $errors->first('budget') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label>Will you be joining by yourself or with a guest*</label>
 								<ul class="css-radio block">
                                     <li>
                                         <a>
-                                            <input type="radio" id="Just myself" name="radio-joined">
+                                            <input type="radio" value="Just myself" id="Just myself" name="radio_joined" @if(old('radio_joined') == 'Just myself') checked @endif>
                                             <label for="Just myself">Just myself</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="With a partner" name="radio-joined">
+                                            <input type="radio" value="With a partner" id="With a partner" name="radio_joined" @if(old('radio_joined') == 'With a partner') checked @endif>
                                             <label for="With a partner">With a partner</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="with a friend" name="radio-joined">
+                                            <input type="radio" value="With a friend" id="with a friend" name="radio_joined" @if(old('radio_joined') == 'With a friend') checked @endif>
                                             <label for="with a friend">With a friend</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="with a family member" name="radio-joined">
+                                            <input type="radio" value="With a family member" id="with a family member" name="radio_joined" @if(old('radio_joined') == 'With a family member') checked @endif>
                                             <label for="with a family member">With a family member</label>
                                         </a>
                                     </li>
                                 </ul>
+                                @if($errors->has('radio_joined')) <span class="help-block">{{ $errors->first('radio_joined') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label for="guest-name">Guest’s Name(s)* (if none, enter none)</label>
-								<input class="form-control" type="text" id="guest-name" name="guest-name"/>
+								<input class="form-control" type="text" id="guest-name" name="guest_name" value="{{ old('guest_name') }}"/>
+								@if($errors->has('guest_name')) <span class="help-block">{{ $errors->first('guest_name') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label for="guest-email">Guest’s Email(s)* (if none, enter none)</label>
-								<input class="form-control" type="text" id="guest-email" name="guest-email"/>
+								<input class="form-control" type="text" id="guest-email" name="guest_email" value="{{ old('guest_email') }}"/>
+								@if($errors->has('guest_email')) <span class="help-block">{{ $errors->first('guest_email') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label>What would you like to achieve through this appointment? (pick more than one)</label>
@@ -265,42 +283,46 @@
 									<ul class="css-radio block">
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Product-knowledge" name="checkbox-achieve">
+	                                            <input type="checkbox" value="Product knowledge" id="Product-knowledge" name="checkbox_achieve[]" @if(old('checkbox_achieve')) @if(in_array("Product knowledge", old('checkbox_achieve'))) checked @endif @endif>
 	                                            <label for="Product-knowledge">Product knowledge</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Design-Consultation" name="checkbox-achieve">
+	                                            <input type="checkbox" value="Design Consultation" id="Design-Consultation" name="checkbox_achieve[]"  @if(old('checkbox_achieve')) @if(in_array("Product Design Consultation", old('checkbox_achieve'))) checked @endif @endif>
 	                                            <label for="Design-Consultation">Design Consultation</label>
 	                                        </a>
 	                                    </li>
 	                                    <li>
 	                                        <a>
-	                                            <input type="checkbox" id="Purchase-Deal" name="checkbox-achieve">
+	                                            <input type="checkbox" value="Purchase-Deal" id="Purchase-Deal" name="checkbox_achieve[]"  @if(old('checkbox_achieve')) @if(in_array("Purchase-Deal", old('checkbox_achieve'))) checked @endif @endif>
 	                                            <label for="Purchase-Deal">Purchase-Deal</label>
 	                                        </a>
 	                                    </li>
 	                                </ul>
 	                            </div>
+	                            @if($errors->has('checkbox_achieve')) <span class="help-block">{{ $errors->first('checkbox_achieve') }}</span>  @endif
 							</div>
 							<div class="form-group big">
 								<label>Have you confirmed that your contact email and phone number are correct?*</label>
 								<ul class="css-radio block">
                                     <li>
                                         <a>
-                                            <input type="radio" id="Yes" name="radio-confirm">
+                                            <input type="radio" id="Yes" value="Yes" name="radio_confirm">
                                             <label for="Yes">Yes</label>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <input type="radio" id="No" name="radio-confirm">
+                                            <input type="radio" id="No" value="No" name="radio_confirm">
                                             <label for="No">No</label>
                                         </a>
                                     </li>
                                 </ul>
+                                @if($errors->has('radio_confirm')) <span class="help-block">{{ $errors->first('radio_confirm') }}</span>  @endif
 							</div>
+							<div class="g-recaptcha" data-sitekey="6LeCycYUAAAAAN5JXVOKsaaqLeS9syAeZ9SJWVyP"></div>
+							@if($errors->has('g-recaptcha-response')) <span class="help-block">{{ $errors->first('g-recaptcha-response') }}</span>  @endif<br>
 							<div>
 								<button type="submit" class="btn">CONFIRM MY APPOINTMENT</button>
 							</div>
@@ -310,6 +332,20 @@
 			</div>
 		</div>
 	</div>
+
+	@if ($message_success= Session::get('success_engagement'))
+    <div id="success-modal" class="modal fade" role="dialog" tabindex='-1'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-pop" data-dismiss="modal"><i class="fas fa-times"></i></div>
+                <div class="t-pop">Success</div>
+                <div class="bdy-pop">
+                    <p>Thank you. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 
 @endsection
 
@@ -326,6 +362,7 @@
 			$(this).addClass('open');
 			var getTime = $(this).find('.get').html();
 			$('.txt .getTime').html(getTime);
+			$('.time_appointment').val(getTime);
 		});
 
         $('.calendar').pignoseCalendar({
@@ -350,7 +387,7 @@
 	            if (date[1] !== null) {
 	                text += date[1].format('MMMM DD, YYYY');
 	            }
-	            
+	            $('.date_appointment').val(text);
 	            getfull.text(text);
             },
             disabledWeekdays: [
@@ -369,8 +406,23 @@
 		var yyyy = today.getFullYear();
 
 		today = mm[today.getMonth()] + ' ' + dd + ', ' + yyyy;
-
-		$('.txt .get-text').html(today);
+		// var date_appointment = $('.date_appointment').val();
+		var old_today = $('.date_appointment').val();
+		if(old_today){
+			$('.date_appointment').val(old_today);
+			$('.txt .get-text').html(old_today);
+		}else{
+			$('.date_appointment').val(today);
+			$('.txt .get-text').html(today);
+		}
+		
 	});
 </script>
+@if ($message_success= Session::get('success_engagement'))
+<script>
+    $(function() {
+            $("#success-modal").modal("toggle");
+    });
+</script>
+@endif
 @endsection

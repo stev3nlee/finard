@@ -38,12 +38,15 @@ Route::get('/ring-sizer', function () {
     return view('ring-sizer');
 });
 
-//Route::get('/appointment-engagement', function () {
-//    return view('appointment-engagement');
-//});
-//Route::get('/appointment-wedding', function () {
-//   return view('appointment-wedding');
-//});
+Route::get('/appointment-engagement', function () {
+   return view('appointment-engagement');
+});
+Route::get('/appointment-wedding', function () {
+  return view('appointment-wedding');
+});
+
+Route::post('/submit-engagement', 'HomeController@submitEngagement');
+Route::post('/submit-wedding', 'HomeController@submitWedding');
 
 Route::group(['prefix' => 'finard-admin'], function () {
     Route::get('/', function () {
@@ -158,6 +161,12 @@ Route::group(['prefix' => 'finard-admin'], function () {
         Route::post('admin/update', 'Admin\AdminController@update');
         Route::get('admin/delete/{id}', 'Admin\AdminController@delete');
         Route::get('admin/status/{id}/{status}', 'Admin\AdminController@status');
+
+        Route::get('appointment', 'Admin\AppointmentController@view')
+            ->name('appointment_view');
+        Route::get('appointment/detail/{id}', 'Admin\AppointmentController@detail');
+        Route::get('appointment/delete/{id}', 'Admin\AppointmentController@delete');
+        Route::get('appointment/status/{id}/{status}', 'Admin\AppointmentController@status');
     });
 });
 

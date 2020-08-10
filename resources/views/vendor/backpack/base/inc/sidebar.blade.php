@@ -63,7 +63,7 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/product') }}"><i class="fa fa-diamond"></i> <span>Product</span></a></li>
                 </ul>
               </li>
-
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/appointment') }}"><i class="fa fa-calendar-minus-o"></i> <span>Appointment</span></a></li>
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/quotation') }}"><i class="fa fa-envelope"></i> <span>Quotation</span></a></li>
           
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/contact') }}"><i class="fa fa-envelope"></i> <span>Contact</span></a></li>
