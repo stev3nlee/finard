@@ -333,8 +333,8 @@
 		        0
 		    ],
 			disabledDates: [
+				moment().add(1, 'd').format("YYYY-MM-DD"),
 				moment().add(2, 'd').format("YYYY-MM-DD"),
-				moment().add(0, 'd').format("YYYY-MM-DD"),
 			],
 			minDate: moment(),
         });

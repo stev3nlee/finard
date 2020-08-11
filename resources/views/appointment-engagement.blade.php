@@ -12,7 +12,7 @@
    }
 </style>
 	<div class="appointment">
-		<div class="img-appointment"><img src="{{ asset('images/img-ring.jpg?v.1') }}" alt="" title=""/></div>
+		<div class="img-appointment"><img src="{{ asset('images/img-ring.jpg?v.2') }}" alt="" title=""/></div>
 		<div class="pos-rel">
 			<div class="tbl">
 				<div class="cell bg">
@@ -400,8 +400,8 @@
 		        0
 		    ],
 			disabledDates: [
+				moment().add(1, 'd').format("YYYY-MM-DD"),
 				moment().add(2, 'd').format("YYYY-MM-DD"),
-				moment().add(0, 'd').format("YYYY-MM-DD"),
 			],
 			minDate: moment(),
         });
