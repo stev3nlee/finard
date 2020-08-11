@@ -127,9 +127,11 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-2 order-3 order-md-2 resp-center">
-                    <div class="t-footer">About</div>
+                    <div class="t-footer">The Finard</div>
                     <ul class="l-footer">
                         <li><a href="{{ URL::to('/ring-sizer') }}">Ring sizer</a></li>
+                        <li><a href="{{ URL::to('/appointment-engagement') }}">Book an Appointment</a></li>
+                        <li><a href="{{ URL::to('/quotation-form') }}">Quotation</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 order-3 order-md-2 resp-center">
@@ -137,7 +139,7 @@
                     <ul class="l-footer">
                         <li><a href="{{ URL::to('/faq') }}">FAQ</a></li>
                         <li><a href="https://www.jne.co.id/en/tracking/trace" target="_blank" rel="noreferrer noopener">Track Package</a></li>
-                        <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
+                        <li><a href="{{ URL::to('/contact') }}">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 order-1 order-md-3 xs40 resp-center">
