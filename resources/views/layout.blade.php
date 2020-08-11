@@ -130,8 +130,8 @@
                     <div class="t-footer">The Finard</div>
                     <ul class="l-footer">
                         <li><a href="{{ URL::to('/ring-sizer') }}">Ring sizer</a></li>
-                        <li><a href="{{ URL::to('/appointment-engagement') }}">Book an Appointment</a></li>
                         <li><a href="{{ URL::to('/quotation-form') }}">Quotation</a></li>
+                        <li><a href="{{ URL::to('/appointment-engagement') }}">Book Appointment</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 order-3 order-md-2 resp-center">
