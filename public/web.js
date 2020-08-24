@@ -10,13 +10,20 @@ $(document).ready(function() {
     $('.click-menu').click(function(event) {
         $('.box-menu').slideToggle('open');
     });
-    $('.drop-menu.engagement').click(function(event) {
-        $('.have-drop.jewelry').removeClass('open');
-        $('.have-drop.engagement').toggleClass('open');
+    $('.drop-menu').click(function(event) {
+        $('.have-drop').removeClass('open');
+        $(this).parents('li').find('.have-drop').toggleClass('open');
     });
 
-    $('.drop-menu.jewelry').click(function(event) {
-        $('.have-drop.engagement').removeClass('open');
-        $('.have-drop.jewelry').toggleClass('open');
+    $("html").click(function(a) {
+        if (!$(a.target).parents().is(".drop-menu") && !$(a.target).is("#menu") && !$(a.target).is(".drop-menu")) {
+            $('.have-drop').removeClass('open');
+        }
+    });
+
+    $("html").click(function(a) {
+        if (!$(a.target).parents().is(".click-menu") && !$(a.target).is("#menu") && !$(a.target).parents().is(".list-menu")) {
+            $('.box-menu').slideUp();
+        }
     });
 });

@@ -131,7 +131,7 @@
                     <ul class="l-footer">
                         <li><a href="{{ URL::to('/ring-sizer') }}">Ring sizer</a></li>
                         <li><a href="{{ URL::to('/quotation-form') }}">Quotation</a></li>
-                        <li><a href="{{ URL::to('/appointment-engagement') }}">Book Appointment</a></li>
+                        <li><a href="{{ URL::to('/appointment-engagement') }}">Book an Appointment</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-3 order-3 order-md-2 resp-center">
@@ -190,19 +190,16 @@
     </div>
     @endif
 
-<!--
 <div class="fix-wa">
     <div style="font-size: 10px; text-align:center; color:#6a111e; font-weight:bold;"> Hi!</div>
-	<a href="https://api.whatsapp.com/send?phone=62816295230" target="_blank">
+	<a href="https://api.whatsapp.com/send?phone=6285890227294" target="_blank">
 		<img src="{{ url('images/whatsapp.png')}}">
 	</a>
 </div>
--->
 
-<!-- JS -->
 <script type="text/javascript" src="{{ asset('jquery-3.4.1.min.js') }}" ></script>
 <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('web.js') }}"></script>
+<script type="text/javascript" src="{{ asset('web.js?v.1') }}"></script>
 @if ($message_success= Session::get('success_newsletter'))
 <script>
     $(function() {
