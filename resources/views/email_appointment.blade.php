@@ -5,7 +5,7 @@
 <title>APPOINTMENT FORM</title>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;line-height: 24px;">
-	<div style="width:600px;margin:0 auto;background-color:#fff;">
+	<div style="width:600px;margin:0 auto; border:1px solid #000; padding:20px 40px;">
 		<div style="text-align: center;padding: 10px 0;">
 			<a href="#">
 				<img src="{{ asset('images/logo.png') }}" style="width: 100px;" />
